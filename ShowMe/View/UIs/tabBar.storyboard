@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UzQ-4g-nVm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="q0V-wd-B0u">
+            <objects>
+                <tabBarController id="UzQ-4g-nVm" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KxT-Rm-dGn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="0.90065817636986301" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="GNa-RQ-b98" kind="relationship" relationship="viewControllers" id="8E2-U7-mAt"/>
+                        <segue destination="22n-VC-AHM" kind="relationship" relationship="viewControllers" id="OU1-rz-GUK"/>
+                        <segue destination="P6M-OM-Ctn" kind="relationship" relationship="viewControllers" id="ZSw-yR-bTY"/>
+                        <segue destination="9ig-Lx-96V" kind="relationship" relationship="viewControllers" id="EsK-yq-z96"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ccf-AQ-48C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="-68"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="BcK-7t-88U">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="GNa-RQ-b98" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="yYK-qo-H4K"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7bS-QR-sDb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="341"/>
+        </scene>
+        <!--Maps-->
+        <scene sceneID="DUU-WY-BPD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Maps" id="22n-VC-AHM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="map.fill" catalog="system" id="h2x-N1-pkU">
+                        <color key="badgeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wxO-2i-EHO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="307" y="341"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="6Dp-p4-ZRF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Favorites" id="P6M-OM-Ctn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="EU3-ct-fe8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6R-Rh-ol2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513" y="343"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="JAI-vH-coJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="9ig-Lx-96V" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="more" id="ISR-hO-4Rt"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uxk-Xo-NWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="343"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="map.fill" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
