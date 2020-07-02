@@ -17,6 +17,9 @@
 		B13BB07E24A51221003C651D /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13BB07D24A51221003C651D /* Destination.swift */; };
 		B13BB08324A516D3003C651D /* DestinationsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13BB08224A516D3003C651D /* DestinationsCollectionViewCell.swift */; };
 		B13BB08524A51CD7003C651D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13BB08424A51CD7003C651D /* HomeViewController.swift */; };
+		B1419C0124AB7419006445B2 /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1419BFF24AB7419006445B2 /* PlacesCollectionViewCell.swift */; };
+		B1419C0224AB7419006445B2 /* PlacesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1419C0024AB7419006445B2 /* PlacesCollectionViewCell.xib */; };
+		B1419C2424AE64C0006445B2 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1419C2324AE64C0006445B2 /* MapsViewController.swift */; };
 		B1556E66249BDEB2000914E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1556E65249BDEB2000914E8 /* AppDelegate.swift */; };
 		B1556E68249BDEB2000914E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1556E67249BDEB2000914E8 /* SceneDelegate.swift */; };
 		B1556E70249BDEB2000914E8 /* ShowMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1556E6E249BDEB2000914E8 /* ShowMe.xcdatamodeld */; };
@@ -48,6 +51,9 @@
 		B13BB07D24A51221003C651D /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		B13BB08224A516D3003C651D /* DestinationsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsCollectionViewCell.swift; sourceTree = "<group>"; };
 		B13BB08424A51CD7003C651D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B1419BFF24AB7419006445B2 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1419C0024AB7419006445B2 /* PlacesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesCollectionViewCell.xib; sourceTree = "<group>"; };
+		B1419C2324AE64C0006445B2 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		B1556E62249BDEB2000914E8 /* ShowMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1556E65249BDEB2000914E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1556E67249BDEB2000914E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				B13BB08424A51CD7003C651D /* HomeViewController.swift */,
+				B1419C2324AE64C0006445B2 /* MapsViewController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -137,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				B13BB08224A516D3003C651D /* DestinationsCollectionViewCell.swift */,
+				B1419BFF24AB7419006445B2 /* PlacesCollectionViewCell.swift */,
+				B1419C0024AB7419006445B2 /* PlacesCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -284,6 +293,7 @@
 				B1556E72249BDEB6000914E8 /* Assets.xcassets in Resources */,
 				B13BB07A24A50DF9003C651D /* Favorites.storyboard in Resources */,
 				B13BB07824A50BB0003C651D /* Maps.storyboard in Resources */,
+				B1419C0224AB7419006445B2 /* PlacesCollectionViewCell.xib in Resources */,
 				B13BB07424A50AE7003C651D /* tabBar.storyboard in Resources */,
 				B13BB07624A50B0A003C651D /* Home.storyboard in Resources */,
 				B13BB07C24A50E58003C651D /* Settings.storyboard in Resources */,
@@ -385,6 +395,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1419C2424AE64C0006445B2 /* MapsViewController.swift in Sources */,
+				B1419C0124AB7419006445B2 /* PlacesCollectionViewCell.swift in Sources */,
 				B1556E8B249BDFB2000914E8 /* PlacesSession.swift in Sources */,
 				B13BB07E24A51221003C651D /* Destination.swift in Sources */,
 				B1556E66249BDEB2000914E8 /* AppDelegate.swift in Sources */,

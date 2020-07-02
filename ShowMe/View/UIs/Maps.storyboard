@@ -13,8 +13,8 @@
                 <navigationController id="fc4-QK-AXy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="map.fill" catalog="system" id="hz9-7F-DSG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KZb-4V-Meg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="KZb-4V-Meg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -25,21 +25,36 @@
             </objects>
             <point key="canvasLocation" x="-749" y="130"/>
         </scene>
-        <!--View Controller-->
+        <!--Maps-->
         <scene sceneID="w0g-17-yy8">
             <objects>
-                <viewController id="CxE-9v-qfR" sceneMemberID="viewController">
+                <viewController id="CxE-9v-qfR" customClass="MapsViewController" customModule="ShowMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bcj-s0-tzw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="td6-mP-aDF" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="td6-mP-aDF" firstAttribute="top" secondItem="yrM-vU-8S8" secondAttribute="top" id="5vJ-8D-whR"/>
+                            <constraint firstItem="yrM-vU-8S8" firstAttribute="bottom" secondItem="td6-mP-aDF" secondAttribute="bottom" id="ROl-jw-n78"/>
+                            <constraint firstItem="td6-mP-aDF" firstAttribute="leading" secondItem="yrM-vU-8S8" secondAttribute="leading" id="bkI-u0-zay"/>
+                            <constraint firstItem="yrM-vU-8S8" firstAttribute="trailing" secondItem="td6-mP-aDF" secondAttribute="trailing" id="x8r-Vz-Sot"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yrM-vU-8S8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="l8j-l3-cvH"/>
+                    <navigationItem key="navigationItem" title="Maps" id="l8j-l3-cvH"/>
+                    <connections>
+                        <outlet property="mapView" destination="td6-mP-aDF" id="UTc-Dw-np9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9M9-RN-ugU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14" y="130"/>
+            <point key="canvasLocation" x="13.043478260869566" y="129.91071428571428"/>
         </scene>
     </scenes>
     <resources>
