@@ -17,6 +17,7 @@ class MapsViewController: UIViewController {
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
+    var searchedPlaces = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +73,5 @@ extension MapsViewController: GMSAutocompleteResultsViewControllerDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
-
 
 
