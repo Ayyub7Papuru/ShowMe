@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "shoe_store.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "shoe_store@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

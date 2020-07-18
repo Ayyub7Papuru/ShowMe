@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "bowling_alley.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "bowling_alley@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

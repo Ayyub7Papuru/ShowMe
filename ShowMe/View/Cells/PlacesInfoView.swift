@@ -11,7 +11,7 @@ import UIKit
 class PlacesInfoView: UIView {
     
     @IBOutlet weak var placesName: UILabel!
-    @IBOutlet weak var placesImage: UIImageView!
     @IBOutlet weak var placesAddress: UILabel!
+    @IBOutlet weak var placesImage: UIImageView!
     
 }

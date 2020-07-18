@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "fuel.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "gas_station@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

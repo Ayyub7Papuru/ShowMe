@@ -17,7 +17,7 @@ class PlaceMarker: GMSMarker {
         super.init()
         
         position = place.coordinate
-        groundAnchor = CGPoint(x: 0.5, y: 1)
+        groundAnchor = CGPoint(x: 0.5, y: 0.5)
         appearAnimation = .pop
         
         var foundType = "cinema"

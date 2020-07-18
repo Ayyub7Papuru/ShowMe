@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "taxi_stand.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "taxi_stand@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "amusement-park.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "amusement_park@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

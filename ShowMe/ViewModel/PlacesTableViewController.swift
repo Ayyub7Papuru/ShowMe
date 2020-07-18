@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PlacesTableViewControllerDelegate: class {
-    func placesController(_ controller: PlacesTableViewController, didSelectPlaces types: [String])
+    func placesController(_ controller: PlacesTableViewController, didSelectPlaces places: [String])
 }
 class PlacesTableViewController: UITableViewController {
     private let possiblePlacesDictionnary = ["bakery": "Bakery", "bar": "Bar", "cafe": "Cafe", "grocery_or_supermarket": "Supermarket", "restaurant": "Restaurant", "aquarium": "Aquarium", "atm": "ATM", "bowling_alley": "Bowling", "cinema": "Cinema", "casino": "Casino", "embassy": "Embassy", "police": "Police Station", "gas_station": "Gas Station", "spa": "Spa", "shopping_mall": "Mall", "hospital": "Hospital", "airport": "Airport", "gym": "Gym", "amusement_park": "Amusement Park", "museum": "Museum", "hotel": "Hotel", "jewelry_store": "Jewelry Store", "shoe_store": "Shoe Store", "train_station": "Train Station", "taxi_stand": "Taxi", "zoo": "Zoo", "tourist_attraction": "Places of interests", "parking": "Parking", "park": "Park", "beauty_salon": "Beauty Salon"]
@@ -34,14 +34,20 @@ extension PlacesTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "placesCell", for: indexPath)
         let key = sortedKeys[indexPath.row]
         let type = possiblePlacesDictionnary[key]
         cell.textLabel?.text = type
         cell.imageView?.image = UIImage(named: key)
         cell.accessoryType = selectedPlaces.contains(key) ? .checkmark : .none
         cell.tintColor = .purple
+        
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       return  tableView.frame.height / 15
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -54,4 +60,8 @@ extension PlacesTableViewController {
         
         tableView.reloadData()
     }
+}
+
+extension UIImage {
+    
 }

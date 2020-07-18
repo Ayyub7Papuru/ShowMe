@@ -50,6 +50,9 @@
                     <navigationItem key="navigationItem" title="Maps" id="l8j-l3-cvH">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="3rG-vV-Xfu">
                             <color key="tintColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="0.74783283389999999" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="refreshPlaces:" destination="CxE-9v-qfR" id="rzZ-HW-V9r"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oRz-zd-bGG">
                             <color key="tintColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="0.74783283389999999" colorSpace="custom" customColorSpace="sRGB"/>

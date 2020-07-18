@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "jewelry_store.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "jewelry_store@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
