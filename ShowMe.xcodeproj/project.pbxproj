@@ -20,6 +20,9 @@
 		B1419C0124AB7419006445B2 /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1419BFF24AB7419006445B2 /* PlacesCollectionViewCell.swift */; };
 		B1419C0224AB7419006445B2 /* PlacesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1419C0024AB7419006445B2 /* PlacesCollectionViewCell.xib */; };
 		B1419C2424AE64C0006445B2 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1419C2324AE64C0006445B2 /* MapsViewController.swift */; };
+		B147B32B24D9EB4E00B24A3F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147B32924D9EB4E00B24A3F /* DetailsViewController.swift */; };
+		B147B32C24D9EB4E00B24A3F /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B147B32A24D9EB4E00B24A3F /* DetailsViewController.xib */; };
+		B148F92724C9DFF000102AF0 /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B148F92624C9DFEF00102AF0 /* GooglePlace.swift */; };
 		B1556E66249BDEB2000914E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1556E65249BDEB2000914E8 /* AppDelegate.swift */; };
 		B1556E68249BDEB2000914E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1556E67249BDEB2000914E8 /* SceneDelegate.swift */; };
 		B1556E70249BDEB2000914E8 /* ShowMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1556E6E249BDEB2000914E8 /* ShowMe.xcdatamodeld */; };
@@ -28,7 +31,6 @@
 		B1556E80249BDEB6000914E8 /* ShowMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1556E7F249BDEB6000914E8 /* ShowMeTests.swift */; };
 		B1556E8B249BDFB2000914E8 /* PlacesSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1556E8A249BDFB2000914E8 /* PlacesSession.swift */; };
 		B188A39324BE2D0E003543B2 /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A39224BE2D0E003543B2 /* GoogleService.swift */; };
-		B188A39524BE2D53003543B2 /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A39424BE2D53003543B2 /* GooglePlace.swift */; };
 		B188A39724BE3771003543B2 /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A39624BE3771003543B2 /* PlaceMarker.swift */; };
 		B188A39B24BE3CD8003543B2 /* CLLocationCoordinate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A39A24BE3CD8003543B2 /* CLLocationCoordinate+Extensions.swift */; };
 		B188A39D24BE3D8A003543B2 /* PlacesTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B188A39C24BE3D8A003543B2 /* PlacesTableViewController.storyboard */; };
@@ -63,6 +65,9 @@
 		B1419BFF24AB7419006445B2 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1419C0024AB7419006445B2 /* PlacesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesCollectionViewCell.xib; sourceTree = "<group>"; };
 		B1419C2324AE64C0006445B2 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
+		B147B32924D9EB4E00B24A3F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		B147B32A24D9EB4E00B24A3F /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		B148F92624C9DFEF00102AF0 /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
 		B1556E62249BDEB2000914E8 /* ShowMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1556E65249BDEB2000914E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1556E67249BDEB2000914E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +80,6 @@
 		B1556E81249BDEB6000914E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1556E8A249BDFB2000914E8 /* PlacesSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSession.swift; sourceTree = "<group>"; };
 		B188A39224BE2D0E003543B2 /* GoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
-		B188A39424BE2D53003543B2 /* GooglePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
 		B188A39624BE3771003543B2 /* PlaceMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
 		B188A39A24BE3CD8003543B2 /* CLLocationCoordinate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate+Extensions.swift"; sourceTree = "<group>"; };
 		B188A39C24BE3D8A003543B2 /* PlacesTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlacesTableViewController.storyboard; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 			children = (
 				B13BB08424A51CD7003C651D /* HomeViewController.swift */,
 				B1419C2324AE64C0006445B2 /* MapsViewController.swift */,
+				B147B32924D9EB4E00B24A3F /* DetailsViewController.swift */,
+				B147B32A24D9EB4E00B24A3F /* DetailsViewController.xib */,
 				B188A39E24BE4044003543B2 /* PlacesTableViewController.swift */,
 			);
 			path = ViewModel;
@@ -145,7 +151,7 @@
 				B1556E8A249BDFB2000914E8 /* PlacesSession.swift */,
 				B13BB07D24A51221003C651D /* Destination.swift */,
 				B188A39224BE2D0E003543B2 /* GoogleService.swift */,
-				B188A39424BE2D53003543B2 /* GooglePlace.swift */,
+				B148F92624C9DFEF00102AF0 /* GooglePlace.swift */,
 				B188A39624BE3771003543B2 /* PlaceMarker.swift */,
 				B188A39A24BE3CD8003543B2 /* CLLocationCoordinate+Extensions.swift */,
 			);
@@ -329,6 +335,7 @@
 				B188A39D24BE3D8A003543B2 /* PlacesTableViewController.storyboard in Resources */,
 				B13BB07A24A50DF9003C651D /* Favorites.storyboard in Resources */,
 				B13BB07824A50BB0003C651D /* Maps.storyboard in Resources */,
+				B147B32C24D9EB4E00B24A3F /* DetailsViewController.xib in Resources */,
 				B1419C0224AB7419006445B2 /* PlacesCollectionViewCell.xib in Resources */,
 				B13BB07424A50AE7003C651D /* tabBar.storyboard in Resources */,
 				B13BB07624A50B0A003C651D /* Home.storyboard in Resources */,
@@ -434,7 +441,6 @@
 			files = (
 				B1419C2424AE64C0006445B2 /* MapsViewController.swift in Sources */,
 				B1419C0124AB7419006445B2 /* PlacesCollectionViewCell.swift in Sources */,
-				B188A39524BE2D53003543B2 /* GooglePlace.swift in Sources */,
 				B188A39724BE3771003543B2 /* PlaceMarker.swift in Sources */,
 				B1556E8B249BDFB2000914E8 /* PlacesSession.swift in Sources */,
 				B188A39F24BE4044003543B2 /* PlacesTableViewController.swift in Sources */,
@@ -442,11 +448,13 @@
 				B1556E66249BDEB2000914E8 /* AppDelegate.swift in Sources */,
 				B1556E70249BDEB2000914E8 /* ShowMe.xcdatamodeld in Sources */,
 				B188A39B24BE3CD8003543B2 /* CLLocationCoordinate+Extensions.swift in Sources */,
+				B147B32B24D9EB4E00B24A3F /* DetailsViewController.swift in Sources */,
 				B188A39324BE2D0E003543B2 /* GoogleService.swift in Sources */,
 				B1556E68249BDEB2000914E8 /* SceneDelegate.swift in Sources */,
 				B188A3A124BE454F003543B2 /* UIView+Extensions.swift in Sources */,
 				B13BB08524A51CD7003C651D /* HomeViewController.swift in Sources */,
 				B188A3AB24BE497C003543B2 /* PlacesInfoView.swift in Sources */,
+				B148F92724C9DFF000102AF0 /* GooglePlace.swift in Sources */,
 				B13BB08324A516D3003C651D /* DestinationsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

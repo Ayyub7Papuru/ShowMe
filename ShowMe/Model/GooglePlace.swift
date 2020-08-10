@@ -1,44 +1,49 @@
 //
-//  GooglePlace.swift
+//  PlaceMarker.swift
 //  ShowMe
 //
 //  Created by SayajinPapuru on 14/07/2020.
 //  Copyright © 2020 sayajin papuru. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import CoreLocation
+import SwiftyJSON
 
-struct GooglePlace: Codable {
+class GooglePlace {
   let name: String
   let address: String
-  let types: [String]
+  let coordinate: CLLocationCoordinate2D
+  let placeType: String
+  let rating: Double
+  var photoReference: String?
+  var photo: UIImage?
   
-  private let geometry: Geometry
-  var coordinate: CLLocationCoordinate2D {
-    return CLLocationCoordinate2D(latitude: geometry.location.lat, longitude: geometry.location.lng)
-  }
-
-  enum CodingKeys: String, CodingKey {
-    case name
-    case address = "vicinity"
-    case types
-    case geometry
-  }
-}
-
-extension GooglePlace {
-  struct Response: Codable {
-    let results: [GooglePlace]
-    let errorMessage: String?
-  }
-  
-  private struct Geometry: Codable {
-    let location: Coordinate
-  }
-  
-  private struct Coordinate: Codable {
-    let lat: CLLocationDegrees
-    let lng: CLLocationDegrees
+  init(dictionary: [String: Any], acceptedTypes: [String])
+  {
+    let json = JSON(dictionary)
+    name = json["name"].stringValue
+    address = json["vicinity"].stringValue
+    
+    let lat = json["geometry"]["location"]["lat"].doubleValue as CLLocationDegrees
+    let lng = json["geometry"]["location"]["lng"].doubleValue as CLLocationDegrees
+    coordinate = CLLocationCoordinate2DMake(lat, lng)
+    
+    photoReference = json["photos"][0]["photo_reference"].string
+    rating = json["rating"][0].double ?? 0.0
+    
+    var foundType = "restaurant"
+    let possibleTypes = acceptedTypes.count > 0 ? acceptedTypes : ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant", "airport", "amusement_park", "aquarium", "atm", "beauty_salon", "bowling_alley", "cafe", "casino", "cinema", "embassy", "gas_station", "gym", "hospital", "hotel", "jewelry_store", "museum", "park", "parking", "police", "shoe_store", "shopping_mall", "spa", "taxi_stand", "tourist_attraction", "train_station","zoo"]
+    
+    if let types = json["types"].arrayObject as? [String] {
+      for type in types {
+        if possibleTypes.contains(type) {
+          foundType = type
+          break
+        }
+      }
+    }
+      placeType = foundType
   }
 }

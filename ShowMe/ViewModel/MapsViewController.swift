@@ -12,54 +12,68 @@ import GoogleMaps
 
 class MapsViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var mapView: GMSMapView!
     
+    // MARK: - Properties
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
-    var searchedPlaces = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
-    var locationManager = CLLocationManager()
+    var searchedPlaces = ["bar", "bakery", "cafe", "grocery_or_supermarket", "restaurant", "amusement_park", "aquarium", "atm", "beauty_salon", "bowling_alley", "cafe", "casino", "cinema", "embassy", "gas_station", "gym", "hospital", "hotel", "jewelry_store", "museum", "park", "parking", "police", "shoe_store", "shopping_mall", "spa", "taxi_stand", "tourist_attraction", "train_station","zoo"]
+    
+    private var locationManager = CLLocationManager()
     let dataProvider = GoogleService()
-    let searchRadius: Double = 1000
+    let searchRadius: Double = 10000
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         locationManager.delegate = self
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.requestLocation()
-            mapView.settings.compassButton = true
-            mapView.settings.myLocationButton = true
-        } else {
-            locationManager.requestAlwaysAuthorization()
-        }
+        locationManager.requestWhenInUseAuthorization()
+        
+    
         mapView.delegate = self
-        
-        resultsViewController = GMSAutocompleteResultsViewController()
-        resultsViewController?.delegate = self
-        
-        searchController = UISearchController(searchResultsController: resultsViewController)
-        searchController?.searchResultsUpdater = resultsViewController
-        
-        // Put the search bar in the navigation bar.
-        searchController?.searchBar.sizeToFit()
-        navigationItem.titleView = searchController?.searchBar
-        
-        // When UISearchController presents the results view, present it in
-        // this view controller, not one further up the chain.
-        definesPresentationContext = true
-        
-        // Prevent the navigation bar from being hidden when searching.
-        searchController?.hidesNavigationBarDuringPresentation = false
+        autoCompletion()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      guard
+        let navigationController = segue.destination as? UINavigationController,
+        let controller = navigationController.topViewController as? PlacesTableViewController
+        else {
+          return
+      }
+      controller.selectedPlaces = searchedPlaces
+      controller.delegate = self
+        print(searchedPlaces)
+    }
+    
+    // MARK: - Functions
     @IBAction func refreshPlaces(_ sender: Any) {
         fetchPlaces(near: mapView.camera.target)
     }
     
+    func autoCompletion() {
+        resultsViewController = GMSAutocompleteResultsViewController()
+            resultsViewController?.delegate = self
+            
+            searchController = UISearchController(searchResultsController: resultsViewController)
+            searchController?.searchResultsUpdater = resultsViewController
+            
+            // Put the search bar in the navigation bar.
+            searchController?.searchBar.sizeToFit()
+            navigationItem.titleView = searchController?.searchBar
+            
+            // When UISearchController presents the results view, present it in
+            // this view controller, not one further up the chain.
+            definesPresentationContext = true
+            
+            // Prevent the navigation bar from being hidden when searching.
+            searchController?.hidesNavigationBarDuringPresentation = false
+    }
+    
     func fetchPlaces(near coordinate: CLLocationCoordinate2D) {
         mapView.clear()
-        dataProvider.fetchPlaces(near: coordinate, radius: searchRadius, types: searchedPlaces) { places in
+        dataProvider.fetchPlacesNearCoordinate(coordinate, radius: searchRadius, types: searchedPlaces) { places in
             places.forEach { place in
                 let marker = PlaceMarker(place: place, availableTypes: self.searchedPlaces)
                 marker.map = self.mapView
@@ -68,7 +82,7 @@ class MapsViewController: UIViewController {
     }
 }
 
-// Handle the user's selection.
+// MARK: - GMSAutocomplete
 extension MapsViewController: GMSAutocompleteResultsViewControllerDelegate {
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                            didAutocompleteWith place: GMSPlace) {
@@ -98,10 +112,13 @@ extension MapsViewController: GMSAutocompleteResultsViewControllerDelegate {
     }
 }
 
+// MARK: - CLLocationManagerDelegate
 extension MapsViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard status == .authorizedWhenInUse else { return }
         locationManager.requestLocation()
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -115,6 +132,7 @@ extension MapsViewController: CLLocationManagerDelegate {
     }
 }
 
+// MARK: - PlacesTableViewControllerDelegate
 extension MapsViewController: PlacesTableViewControllerDelegate {
     func placesController(_ controller: PlacesTableViewController, didSelectPlaces places: [String]) {
         searchedPlaces = searchedPlaces.sorted()
@@ -123,18 +141,25 @@ extension MapsViewController: PlacesTableViewControllerDelegate {
     }
 }
 
+// MARK: - GMSMapViewDelegate
 extension MapsViewController: GMSMapViewDelegate {
     
-    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        print("helllloooo")
+    func mapView(_ mapView: GMSMapView, didLongPressInfoWindowOf marker: GMSMarker) {
+        let detailsVC = DetailsViewController()
+        present(detailsVC, animated: true)
     }
+    
     func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
         guard let placeMarker = marker as? PlaceMarker else { return nil }
         guard let infoView = UIView.viewFromNibName("PlacesInfoView") as? PlacesInfoView else { return nil }
         
         infoView.placesName.text = placeMarker.place.name
         infoView.placesAddress.text = placeMarker.place.address
-        infoView.placesImage.image = UIImage(named: "cocktail")
+        if let photo = placeMarker.place.photo {
+            infoView.placesImage.image = photo
+        } else {
+            infoView.placesImage.image = UIImage(named: "cocktail")
+        }
        
         return infoView
     }

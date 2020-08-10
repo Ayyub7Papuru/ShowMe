@@ -7,9 +7,9 @@ target 'ShowMe' do
 
   # Pods for ShowMe
   pod 'Alamofire', '4.9.1'
-  pod 'SDWebImage', '~> 5.0'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'SwiftyJSON'
 
   target 'ShowMeTests' do
     inherit! :search_paths
