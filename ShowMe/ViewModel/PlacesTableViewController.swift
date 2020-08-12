@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - Protocol
 protocol PlacesTableViewControllerDelegate: class {
-    func placesController(_ controller: PlacesTableViewController, didSelectPlaces places: [String])
+    func placesController(didSelectPlaces places: [String])
 }
 
 // MARK: - Class
@@ -18,7 +18,7 @@ class PlacesTableViewController: UITableViewController {
     
     let gg = MapsViewController()
     // MARK: - Properties
-    private let possiblePlacesDictionnary = ["bakery": "Bakery", "bar": "Bar", "cafe": "Cafe", "grocery_or_supermarket": "Supermarket", "restaurant": "Restaurant", "aquarium": "Aquarium", "atm": "ATM", "bowling_alley": "Bowling", "cinema": "Cinema", "casino": "Casino", "embassy": "Embassy", "police": "Police Station", "gas_station": "Gas Station", "spa": "Spa", "shopping_mall": "Mall", "hospital": "Hospital", "gym": "Gym", "amusement_park": "Amusement Park", "museum": "Museum", "hotel": "Hotel", "jewelry_store": "Jewelry Store", "shoe_store": "Shoe Store", "train_station": "Train Station", "taxi_stand": "Taxi", "zoo": "Zoo", "tourist_attraction": "Places of interests", "parking": "Parking", "park": "Park", "beauty_salon": "Beauty Salon"]
+    private let possiblePlacesDictionnary = ["bar": "Bar", "bakery": "Bakery", "grocery_or_supermarket": "Supermarket", "restaurant": "Restaurant", "atm": "ATM", "cinema": "Cinema", "embassy": "Embassy", "gas_station": "Gas Station", "hospital": "Hospital", "hotel": "Hotel", "jewelry_store": "Jewelry Store", "museum": "Museum", "park": "Park", "parking": "Parking", "police": "Police", "shopping_mall": "Mall", "spa": "Spa", "tourist_attraction": "Places of interests", "zoo": "Zoo"]
     
     private var sortedKeys: [String] {
         return possiblePlacesDictionnary.keys.sorted()
@@ -29,7 +29,7 @@ class PlacesTableViewController: UITableViewController {
     
     // MARK: - Actions
     @IBAction func donePressed(_sender: AnyObject) {
-        delegate?.placesController(self, didSelectPlaces: selectedPlaces)
+        delegate?.placesController(didSelectPlaces: selectedPlaces)
         dismiss(animated: true)
     }
     

@@ -34,7 +34,7 @@ class GooglePlace {
     rating = json["rating"][0].double ?? 0.0
     
     var foundType = "restaurant"
-    let possibleTypes = acceptedTypes.count > 0 ? acceptedTypes : ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant", "airport", "amusement_park", "aquarium", "atm", "beauty_salon", "bowling_alley", "cafe", "casino", "cinema", "embassy", "gas_station", "gym", "hospital", "hotel", "jewelry_store", "museum", "park", "parking", "police", "shoe_store", "shopping_mall", "spa", "taxi_stand", "tourist_attraction", "train_station","zoo"]
+    let possibleTypes = acceptedTypes.count > 0 ? acceptedTypes : ["bar", "bakery", "grocery_or_supermarket", "restaurant", "atm", "cinema", "embassy", "gas_station", "hospital", "hotel", "jewelry_store", "museum", "park", "parking", "police", "shopping_mall", "spa", "tourist_attraction", "zoo"]
     
     if let types = json["types"].arrayObject as? [String] {
       for type in types {

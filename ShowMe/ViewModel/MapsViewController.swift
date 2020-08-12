@@ -19,7 +19,7 @@ class MapsViewController: UIViewController {
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
-    var searchedPlaces = ["bar", "bakery", "cafe", "grocery_or_supermarket", "restaurant", "amusement_park", "aquarium", "atm", "beauty_salon", "bowling_alley", "cafe", "casino", "cinema", "embassy", "gas_station", "gym", "hospital", "hotel", "jewelry_store", "museum", "park", "parking", "police", "shoe_store", "shopping_mall", "spa", "taxi_stand", "tourist_attraction", "train_station","zoo"]
+    var searchedPlaces = ["bar", "bakery", "grocery_or_supermarket", "restaurant", "atm", "cinema", "embassy", "gas_station", "hospital", "hotel", "jewelry_store", "museum", "park", "parking", "police", "shopping_mall", "spa", "tourist_attraction", "zoo"]
     
     private var locationManager = CLLocationManager()
     let dataProvider = GoogleService()
@@ -134,9 +134,8 @@ extension MapsViewController: CLLocationManagerDelegate {
 
 // MARK: - PlacesTableViewControllerDelegate
 extension MapsViewController: PlacesTableViewControllerDelegate {
-    func placesController(_ controller: PlacesTableViewController, didSelectPlaces places: [String]) {
-        searchedPlaces = searchedPlaces.sorted()
-        dismiss(animated: true, completion: nil)
+    func placesController(didSelectPlaces places: [String]) {
+        searchedPlaces = places
         fetchPlaces(near: mapView.camera.target)
     }
 }
@@ -145,6 +144,7 @@ extension MapsViewController: PlacesTableViewControllerDelegate {
 extension MapsViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didLongPressInfoWindowOf marker: GMSMarker) {
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
         let detailsVC = DetailsViewController()
         present(detailsVC, animated: true)
     }
