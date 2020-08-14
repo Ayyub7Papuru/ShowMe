@@ -13,5 +13,15 @@ class PlacesInfoView: UIView {
     @IBOutlet weak var placesName: UILabel!
     @IBOutlet weak var placesAddress: UILabel!
     @IBOutlet weak var placesImage: UIImageView!
+    @IBOutlet weak var placesRate: UILabel!
+    
+    var place: GooglePlace? {
+        didSet {
+            placesName.text = place?.name
+            placesAddress.text = place?.address
+            placesImage.image = place?.photo
+            placesRate.text = place?.rating.description
+        }
+    }
     
 }

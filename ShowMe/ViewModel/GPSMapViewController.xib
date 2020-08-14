@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GPSMapViewController" customModule="ShowMe" customModuleProvider="target">
+            <connections>
+                <outlet property="mapView" destination="DXJ-uG-6gr" id="zY2-kD-ifq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-uG-6gr">
+                    <rect key="frame" x="0.0" y="10" width="414" height="886"/>
+                </mapView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="DXJ-uG-6gr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9ie-SC-PZ6"/>
+                <constraint firstAttribute="trailing" secondItem="DXJ-uG-6gr" secondAttribute="trailing" id="AXM-WC-p36"/>
+                <constraint firstAttribute="bottom" secondItem="DXJ-uG-6gr" secondAttribute="bottom" id="SYg-W7-jVP"/>
+                <constraint firstItem="DXJ-uG-6gr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="hoj-Ss-Hyb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="109" y="149"/>
+        </view>
+    </objects>
+</document>

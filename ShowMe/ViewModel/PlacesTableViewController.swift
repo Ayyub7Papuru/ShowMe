@@ -18,7 +18,7 @@ class PlacesTableViewController: UITableViewController {
     
     let gg = MapsViewController()
     // MARK: - Properties
-    private let possiblePlacesDictionnary = ["bar": "Bar", "bakery": "Bakery", "grocery_or_supermarket": "Supermarket", "restaurant": "Restaurant", "atm": "ATM", "cinema": "Cinema", "embassy": "Embassy", "gas_station": "Gas Station", "hospital": "Hospital", "hotel": "Hotel", "jewelry_store": "Jewelry Store", "museum": "Museum", "park": "Park", "parking": "Parking", "police": "Police", "shopping_mall": "Mall", "spa": "Spa", "tourist_attraction": "Places of interests", "zoo": "Zoo"]
+    private let possiblePlacesDictionnary = ["bar": "Bar", "grocery_or_supermarket": "Supermarket", "restaurant": "Restaurant", "atm": "ATM", "cinema": "Cinema", "embassy": "Embassy", "gas_station": "Gas Station", "hospital": "Hospital", "hotel": "Hotel", "museum": "Museum", "park": "Park", "parking": "Parking", "police": "Police", "shopping_mall": "Mall", "tourist_attraction": "Places of interests"]
     
     private var sortedKeys: [String] {
         return possiblePlacesDictionnary.keys.sorted()
@@ -38,6 +38,9 @@ class PlacesTableViewController: UITableViewController {
         return possiblePlacesDictionnary.count
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.frame.height / 18
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "placesCell", for: indexPath)
         let key = sortedKeys[indexPath.row]

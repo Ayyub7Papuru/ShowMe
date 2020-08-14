@@ -19,7 +19,7 @@ class MapsViewController: UIViewController {
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
-    var searchedPlaces = ["bar", "bakery", "grocery_or_supermarket", "restaurant", "atm", "cinema", "embassy", "gas_station", "hospital", "hotel", "jewelry_store", "museum", "park", "parking", "police", "shopping_mall", "spa", "tourist_attraction", "zoo"]
+    var searchedPlaces = ["bar", "grocery_or_supermarket", "restaurant", "atm", "cinema", "embassy", "gas_station", "hospital", "hotel", "museum", "park", "parking", "police", "shopping_mall", "tourist_attraction"]
     
     private var locationManager = CLLocationManager()
     let dataProvider = GoogleService()
@@ -46,6 +46,8 @@ class MapsViewController: UIViewController {
       controller.delegate = self
         print(searchedPlaces)
     }
+    
+    
     
     // MARK: - Functions
     @IBAction func refreshPlaces(_ sender: Any) {
@@ -145,8 +147,8 @@ extension MapsViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didLongPressInfoWindowOf marker: GMSMarker) {
         UINotificationFeedbackGenerator().notificationOccurred(.success)
-        let detailsVC = DetailsViewController()
-        present(detailsVC, animated: true)
+        let GPSMap = GPSMapViewController()
+        present(GPSMap, animated: true)
     }
     
     func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
@@ -155,6 +157,7 @@ extension MapsViewController: GMSMapViewDelegate {
         
         infoView.placesName.text = placeMarker.place.name
         infoView.placesAddress.text = placeMarker.place.address
+        infoView.placesRate.text = placeMarker.place.rating.description
         if let photo = placeMarker.place.photo {
             infoView.placesImage.image = photo
         } else {
