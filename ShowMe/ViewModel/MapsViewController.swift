@@ -44,7 +44,6 @@ class MapsViewController: UIViewController {
       }
       controller.selectedPlaces = searchedPlaces
       controller.delegate = self
-        print(searchedPlaces)
     }
     
     
@@ -147,13 +146,20 @@ extension MapsViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didLongPressInfoWindowOf marker: GMSMarker) {
         UINotificationFeedbackGenerator().notificationOccurred(.success)
+        guard let placeMarker = marker as? PlaceMarker else { return }
         let GPSMap = GPSMapViewController()
+        
+        GPSMap.destinationsLatitude = placeMarker.place.coordinate.latitude
+        GPSMap.destinationsLongitude = placeMarker.place.coordinate.longitude
+        GPSMap.destinationsName = placeMarker.place.name
+        GPSMap.destinationsAddress = placeMarker.place.address
         present(GPSMap, animated: true)
     }
     
     func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
         guard let placeMarker = marker as? PlaceMarker else { return nil }
         guard let infoView = UIView.viewFromNibName("PlacesInfoView") as? PlacesInfoView else { return nil }
+        
         
         infoView.placesName.text = placeMarker.place.name
         infoView.placesAddress.text = placeMarker.place.address
