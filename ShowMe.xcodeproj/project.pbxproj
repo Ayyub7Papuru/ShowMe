@@ -13,9 +13,10 @@
 		B13BB07824A50BB0003C651D /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13BB07724A50BB0003C651D /* Maps.storyboard */; };
 		B13BB07A24A50DF9003C651D /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13BB07924A50DF9003C651D /* Favorites.storyboard */; };
 		B13BB07C24A50E58003C651D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13BB07B24A50E58003C651D /* Settings.storyboard */; };
-		B1419C0124AB7419006445B2 /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1419BFF24AB7419006445B2 /* PlacesCollectionViewCell.swift */; };
-		B1419C0224AB7419006445B2 /* PlacesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1419C0024AB7419006445B2 /* PlacesCollectionViewCell.xib */; };
 		B1419C2424AE64C0006445B2 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1419C2324AE64C0006445B2 /* MapsViewController.swift */; };
+		B147CF8324F3D5C5007D7F19 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147CF8224F3D5C4007D7F19 /* CoreDataStack.swift */; };
+		B147CF8524F3D5CF007D7F19 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147CF8424F3D5CF007D7F19 /* CoreDataManager.swift */; };
+		B147CF8724F3D950007D7F19 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147CF8624F3D94F007D7F19 /* FavouritesViewController.swift */; };
 		B148F92724C9DFF000102AF0 /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B148F92624C9DFEF00102AF0 /* GooglePlace.swift */; };
 		B1556E66249BDEB2000914E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1556E65249BDEB2000914E8 /* AppDelegate.swift */; };
 		B1556E68249BDEB2000914E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1556E67249BDEB2000914E8 /* SceneDelegate.swift */; };
@@ -24,8 +25,6 @@
 		B1556E75249BDEB6000914E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1556E73249BDEB6000914E8 /* LaunchScreen.storyboard */; };
 		B1556E80249BDEB6000914E8 /* ShowMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1556E7F249BDEB6000914E8 /* ShowMeTests.swift */; };
 		B1556E8B249BDFB2000914E8 /* PlacesSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1556E8A249BDFB2000914E8 /* PlacesSession.swift */; };
-		B15DB03F24E7236B00A690E9 /* GPSMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15DB03D24E7236B00A690E9 /* GPSMapViewController.swift */; };
-		B15DB04024E7236B00A690E9 /* GPSMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B15DB03E24E7236B00A690E9 /* GPSMapViewController.xib */; };
 		B15DB04224E725C700A690E9 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15DB04124E725C700A690E9 /* Place.swift */; };
 		B188A39324BE2D0E003543B2 /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A39224BE2D0E003543B2 /* GoogleService.swift */; };
 		B188A39724BE3771003543B2 /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A39624BE3771003543B2 /* PlaceMarker.swift */; };
@@ -55,9 +54,10 @@
 		B13BB07724A50BB0003C651D /* Maps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
 		B13BB07924A50DF9003C651D /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		B13BB07B24A50E58003C651D /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		B1419BFF24AB7419006445B2 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
-		B1419C0024AB7419006445B2 /* PlacesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesCollectionViewCell.xib; sourceTree = "<group>"; };
 		B1419C2324AE64C0006445B2 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
+		B147CF8224F3D5C4007D7F19 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		B147CF8424F3D5CF007D7F19 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B147CF8624F3D94F007D7F19 /* FavouritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		B148F92624C9DFEF00102AF0 /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
 		B1556E62249BDEB2000914E8 /* ShowMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1556E65249BDEB2000914E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,8 +70,6 @@
 		B1556E7F249BDEB6000914E8 /* ShowMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMeTests.swift; sourceTree = "<group>"; };
 		B1556E81249BDEB6000914E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1556E8A249BDFB2000914E8 /* PlacesSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSession.swift; sourceTree = "<group>"; };
-		B15DB03D24E7236B00A690E9 /* GPSMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSMapViewController.swift; sourceTree = "<group>"; };
-		B15DB03E24E7236B00A690E9 /* GPSMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPSMapViewController.xib; sourceTree = "<group>"; };
 		B15DB04124E725C700A690E9 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		B188A39224BE2D0E003543B2 /* GoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		B188A39624BE3771003543B2 /* PlaceMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
@@ -122,8 +120,7 @@
 			children = (
 				B1419C2324AE64C0006445B2 /* MapsViewController.swift */,
 				B188A39E24BE4044003543B2 /* PlacesTableViewController.swift */,
-				B15DB03D24E7236B00A690E9 /* GPSMapViewController.swift */,
-				B15DB03E24E7236B00A690E9 /* GPSMapViewController.xib */,
+				B147CF8624F3D94F007D7F19 /* FavouritesViewController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -143,8 +140,10 @@
 			children = (
 				B1556E8A249BDFB2000914E8 /* PlacesSession.swift */,
 				B188A39224BE2D0E003543B2 /* GoogleService.swift */,
+				B147CF8224F3D5C4007D7F19 /* CoreDataStack.swift */,
 				B148F92624C9DFEF00102AF0 /* GooglePlace.swift */,
 				B188A39624BE3771003543B2 /* PlaceMarker.swift */,
+				B147CF8424F3D5CF007D7F19 /* CoreDataManager.swift */,
 				B188A39A24BE3CD8003543B2 /* CLLocationCoordinate+Extensions.swift */,
 				B15DB04124E725C700A690E9 /* Place.swift */,
 			);
@@ -166,8 +165,6 @@
 		B13BB07F24A51538003C651D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B1419BFF24AB7419006445B2 /* PlacesCollectionViewCell.swift */,
-				B1419C0024AB7419006445B2 /* PlacesCollectionViewCell.xib */,
 				B188A3A924BE497C003543B2 /* PlacesInfoView.swift */,
 				B188A3AA24BE497C003543B2 /* PlacesInfoView.xib */,
 			);
@@ -321,13 +318,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B15DB04024E7236B00A690E9 /* GPSMapViewController.xib in Resources */,
 				B1556E75249BDEB6000914E8 /* LaunchScreen.storyboard in Resources */,
 				B1556E72249BDEB6000914E8 /* Assets.xcassets in Resources */,
 				B188A39D24BE3D8A003543B2 /* PlacesTableViewController.storyboard in Resources */,
 				B13BB07A24A50DF9003C651D /* Favorites.storyboard in Resources */,
 				B13BB07824A50BB0003C651D /* Maps.storyboard in Resources */,
-				B1419C0224AB7419006445B2 /* PlacesCollectionViewCell.xib in Resources */,
 				B13BB07424A50AE7003C651D /* tabBar.storyboard in Resources */,
 				B188A3AC24BE497C003543B2 /* PlacesInfoView.xib in Resources */,
 				B13BB07C24A50E58003C651D /* Settings.storyboard in Resources */,
@@ -429,13 +424,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B147CF8724F3D950007D7F19 /* FavouritesViewController.swift in Sources */,
 				B1419C2424AE64C0006445B2 /* MapsViewController.swift in Sources */,
-				B1419C0124AB7419006445B2 /* PlacesCollectionViewCell.swift in Sources */,
 				B188A39724BE3771003543B2 /* PlaceMarker.swift in Sources */,
 				B1556E8B249BDFB2000914E8 /* PlacesSession.swift in Sources */,
-				B15DB03F24E7236B00A690E9 /* GPSMapViewController.swift in Sources */,
+				B147CF8524F3D5CF007D7F19 /* CoreDataManager.swift in Sources */,
 				B188A39F24BE4044003543B2 /* PlacesTableViewController.swift in Sources */,
 				B1556E66249BDEB2000914E8 /* AppDelegate.swift in Sources */,
+				B147CF8324F3D5C5007D7F19 /* CoreDataStack.swift in Sources */,
 				B1556E70249BDEB2000914E8 /* ShowMe.xcdatamodeld in Sources */,
 				B188A39B24BE3CD8003543B2 /* CLLocationCoordinate+Extensions.swift in Sources */,
 				B15DB04224E725C700A690E9 /* Place.swift in Sources */,

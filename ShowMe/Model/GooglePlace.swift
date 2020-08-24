@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class GooglePlace {
   let name: String
-  let address: String
+  let address: String?
   let coordinate: CLLocationCoordinate2D
   let placeType: String
   let rating: Double

@@ -7,19 +7,32 @@
 //
 
 import Foundation
-import  GoogleMaps
+import GoogleMaps
+import MapKit
+import Contacts
 
-class PlaceMarker: GMSMarker {
+class PlaceMarker: GMSMarker, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
     let place: GooglePlace
     
-    init(place: GooglePlace, availableTypes: [String]) {
+    init(place: GooglePlace, availableTypes: [String], coordinate: CLLocationCoordinate2D) {
         self.place = place
+        self.coordinate = coordinate
         super.init()
         
         position = place.coordinate
         icon = UIImage(named: place.placeType+"_pin")
         groundAnchor = CGPoint(x: 0.5, y: 1)
         appearAnimation = .pop
+    }
+    
+    var mapItem: MKMapItem? {
+        guard let location = place.address else { return nil }
         
+        let addressDict = [CNPostalAddressStreetKey: location]
+        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = place.name
+        return mapItem
     }
 }

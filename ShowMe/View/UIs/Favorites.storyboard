@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MbR-8Y-kkf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MbR-8Y-kkf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,14 +31,33 @@
         <!--Favorites-->
         <scene sceneID="ATE-eb-S0v">
             <objects>
-                <viewController id="iXa-ry-A8y" sceneMemberID="viewController">
+                <viewController id="iXa-ry-A8y" customClass="FavouritesViewController" customModule="ShowMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BLm-eZ-ccA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BJD-Kg-xff">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="iXa-ry-A8y" id="MBU-M1-5Bo"/>
+                                    <outlet property="delegate" destination="iXa-ry-A8y" id="54B-1n-KYI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BJD-Kg-xff" firstAttribute="leading" secondItem="j84-8y-q4i" secondAttribute="leading" id="DKk-EG-erh"/>
+                            <constraint firstItem="j84-8y-q4i" firstAttribute="bottom" secondItem="BJD-Kg-xff" secondAttribute="bottom" id="Ffj-21-ixM"/>
+                            <constraint firstItem="j84-8y-q4i" firstAttribute="trailing" secondItem="BJD-Kg-xff" secondAttribute="trailing" id="l7C-Ae-wD4"/>
+                            <constraint firstItem="BJD-Kg-xff" firstAttribute="top" secondItem="j84-8y-q4i" secondAttribute="top" id="u4g-Ng-qhc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="j84-8y-q4i"/>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="yIe-nY-V5T"/>
+                    <connections>
+                        <outlet property="favouritesTableView" destination="BJD-Kg-xff" id="qFR-so-hYa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3GR-fK-CJp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

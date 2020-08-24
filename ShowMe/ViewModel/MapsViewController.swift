@@ -9,6 +9,8 @@
 import UIKit
 import GooglePlaces
 import GoogleMaps
+import MapKit
+import Contacts
 
 class MapsViewController: UIViewController {
     
@@ -30,8 +32,8 @@ class MapsViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-    
         mapView.delegate = self
+        mapView.isMyLocationEnabled = true
         autoCompletion()
     }
     
@@ -76,7 +78,7 @@ class MapsViewController: UIViewController {
         mapView.clear()
         dataProvider.fetchPlacesNearCoordinate(coordinate, radius: searchRadius, types: searchedPlaces) { places in
             places.forEach { place in
-                let marker = PlaceMarker(place: place, availableTypes: self.searchedPlaces)
+                let marker = PlaceMarker(place: place, availableTypes: self.searchedPlaces, coordinate: coordinate)
                 marker.map = self.mapView
             }
         }
@@ -145,22 +147,32 @@ extension MapsViewController: PlacesTableViewControllerDelegate {
 extension MapsViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didLongPressInfoWindowOf marker: GMSMarker) {
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
-        guard let placeMarker = marker as? PlaceMarker else { return }
-        let GPSMap = GPSMapViewController()
+         UINotificationFeedbackGenerator().notificationOccurred(.success)
+         guard let place = marker as? PlaceMarker else { return }
+         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+         place.mapItem?.openInMaps(launchOptions: launchOptions)
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+//        print("Tapped")
+       guard let marker = marker as? PlacesInfoView else { return }
+        marker.placesAddress.text = "Konichiwaa"
         
-        GPSMap.destinationsLatitude = placeMarker.place.coordinate.latitude
-        GPSMap.destinationsLongitude = placeMarker.place.coordinate.longitude
-        GPSMap.destinationsName = placeMarker.place.name
-        GPSMap.destinationsAddress = placeMarker.place.address
-        present(GPSMap, animated: true)
+//        guard let coreDataManager = infoView.coreDataManager else { return }
+//        if coreDataManager.isPlaceRegistered(with: infoView.googlePlace?.name ?? "") {
+//            coreDataManager.deletePlace(named: infoView.googlePlace?.name ?? "")
+//            infoView.favButton.tintColor = .lightGray
+//        } else {
+//            infoView.savePlace()
+//            infoView.favButton.tintColor = .purple
+//        }
     }
     
     func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
         guard let placeMarker = marker as? PlaceMarker else { return nil }
         guard let infoView = UIView.viewFromNibName("PlacesInfoView") as? PlacesInfoView else { return nil }
         
-        
+        infoView.checkFav()
         infoView.placesName.text = placeMarker.place.name
         infoView.placesAddress.text = placeMarker.place.address
         infoView.placesRate.text = placeMarker.place.rating.description
