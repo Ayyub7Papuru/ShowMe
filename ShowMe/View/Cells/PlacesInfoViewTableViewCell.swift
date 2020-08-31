@@ -10,19 +10,14 @@ import UIKit
 
 class PlacesInfoViewTableViewCell: UITableViewCell {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var placesName: UILabel!
     @IBOutlet weak var placesAddress: UILabel!
     @IBOutlet weak var placesImage: UIImageView!
     @IBOutlet weak var placesRate: UILabel!
     
-    var place: GooglePlace? {
-        didSet {
-            placesName.text = place?.name
-            placesAddress.text = place?.address
-            placesImage.image = place?.photo
-            placesRate.text = place?.rating.description
-        }
-    }
+    // MARK: - Public Properties
     
     var favouritePlace: FavouritePlace? {
         didSet {
@@ -36,5 +31,4 @@ class PlacesInfoViewTableViewCell: UITableViewCell {
             }
         }
     }
-    
 }

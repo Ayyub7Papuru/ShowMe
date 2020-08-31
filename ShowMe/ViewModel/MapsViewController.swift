@@ -27,6 +27,7 @@ class MapsViewController: UIViewController {
     let dataProvider = GoogleService()
     let searchRadius: Double = 10000
     var googlePlace: GooglePlace?
+    var coreDataManager: CoreDataManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,19 @@ class MapsViewController: UIViewController {
                 let marker = PlaceMarker(place: place, availableTypes: self.searchedPlaces, coordinate: coordinate)
                 marker.map = self.mapView
             }
+        }
+    }
+    
+    func savePlace() {
+        coreDataManager?.createPlace(name: googlePlace?.name ?? "", address: googlePlace?.address ?? "", rating: googlePlace?.rating ?? 0.0)
+    }
+    
+    private func checkFav() {
+        guard let coreDataManager = coreDataManager else { return }
+        if coreDataManager.isPlaceRegistered(with: googlePlace?.name ?? "") {
+            coreDataManager.deletePlace(named: googlePlace?.name ?? "")
+        } else {
+            savePlace()
         }
     }
 }
@@ -149,21 +163,32 @@ extension MapsViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didLongPressInfoWindowOf marker: GMSMarker) {
          UINotificationFeedbackGenerator().notificationOccurred(.success)
-         guard let place = marker as? PlaceMarker else { return }
-         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-         place.mapItem?.openInMaps(launchOptions: launchOptions)
-    }
-    
-    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+         let alert = UIAlertController(title: "Select Actions", message: "", preferredStyle: .actionSheet)
+         let gps = UIAlertAction(title: "GPS", style: .default) { (_) in
+             guard let place = marker as? PlaceMarker else { return }
+             let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+             place.mapItem?.openInMaps(launchOptions: launchOptions)
+         }
+         let save = UIAlertAction(title: "Save", style: .default) { (_) in
+             
+         }
+         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+         alert.addAction(gps)
+         alert.addAction(save)
+         alert.addAction(cancel)
+         
+         present(alert, animated: true, completion: nil)
     }
     
     func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
         guard let placeMarker = marker as? PlaceMarker else { return nil }
-        guard let infoView = UIView.viewFromNibName("PlacesInfoView") as? PlacesInfoView else { return nil }
-        
+        let infoView = PlacesInfoView()
+        infoView.translatesAutoresizingMaskIntoConstraints = false
         infoView.placesName.text = placeMarker.place.name
         infoView.placesAddress.text = placeMarker.place.address
         infoView.placesRate.text = placeMarker.place.rating.description
+        infoView.delegate = self
+    
         if let photo = placeMarker.place.photo {
             infoView.placesImage.image = photo
         } else {
@@ -171,5 +196,11 @@ extension MapsViewController: GMSMapViewDelegate {
         }
        
         return infoView
+    }
+}
+
+extension MapsViewController: CoreDataHandler {
+    func registerPlace(place: GooglePlace) {
+        coreDataManager?.createPlace(name: place.name, address: place.address ?? "", rating: place.rating)
     }
 }

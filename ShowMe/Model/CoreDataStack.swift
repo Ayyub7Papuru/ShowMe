@@ -13,7 +13,7 @@ open class CoreDataStack {
     
     private let modelName: String
     
-    public init(modelName: String) {
+    public init(modelName: String = "ShowMe") {
          self.modelName = modelName
      }
     

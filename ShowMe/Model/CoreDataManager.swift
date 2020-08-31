@@ -49,19 +49,6 @@ class CoreDataManager: CoreData {
         coreDataStack.saveContext()
     }
     
-//    func savePlace() {
-//        coreDataManager?.createPlace(name: googlePlace?.name ?? "", address: googlePlace?.address ?? "", rating: googlePlace?.rating ?? 0.0)
-//    }
-//    
-//    private func checkFav() {
-//        guard let coreDataManager = coreDataManager else { return }
-//        if coreDataManager.isPlaceRegistered(with: googlePlace?.name ?? "") {
-//            coreDataManager.deletePlace(named: googlePlace?.name ?? "")
-//        } else {
-//            savePlace()
-//        }
-//    }
-    
     func deletePlace(named name: String) {
         let request: NSFetchRequest<FavouritePlace> = FavouritePlace.fetchRequest()
         request.predicate = NSPredicate(format: "name = %@", name)
