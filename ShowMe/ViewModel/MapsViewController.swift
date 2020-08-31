@@ -26,6 +26,7 @@ class MapsViewController: UIViewController {
     private var locationManager = CLLocationManager()
     let dataProvider = GoogleService()
     let searchRadius: Double = 10000
+    var googlePlace: GooglePlace?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,25 +155,12 @@ extension MapsViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-//        print("Tapped")
-       guard let marker = marker as? PlacesInfoView else { return }
-        marker.placesAddress.text = "Konichiwaa"
-        
-//        guard let coreDataManager = infoView.coreDataManager else { return }
-//        if coreDataManager.isPlaceRegistered(with: infoView.googlePlace?.name ?? "") {
-//            coreDataManager.deletePlace(named: infoView.googlePlace?.name ?? "")
-//            infoView.favButton.tintColor = .lightGray
-//        } else {
-//            infoView.savePlace()
-//            infoView.favButton.tintColor = .purple
-//        }
     }
     
     func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
         guard let placeMarker = marker as? PlaceMarker else { return nil }
         guard let infoView = UIView.viewFromNibName("PlacesInfoView") as? PlacesInfoView else { return nil }
         
-        infoView.checkFav()
         infoView.placesName.text = placeMarker.place.name
         infoView.placesAddress.text = placeMarker.place.address
         infoView.placesRate.text = placeMarker.place.rating.description

@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="378" height="265"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oW-rE-o7y">
-                        <rect key="frame" x="20" y="20" width="303" height="26"/>
+                        <rect key="frame" x="20" y="20" width="338" height="26"/>
                         <color key="backgroundColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="0.50379922939999999" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="21"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,24 +51,10 @@
                             <constraint firstAttribute="width" constant="24" id="KP1-48-5xa"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIb-mU-d2i">
-                        <rect key="frame" x="333" y="20" width="40" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="Pe6-aK-G4w"/>
-                            <constraint firstAttribute="width" constant="40" id="z8n-Kp-k8P"/>
-                        </constraints>
-                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <size key="titleShadowOffset" width="10" height="20"/>
-                        <state key="normal" image="heart.fill" catalog="system"/>
-                        <connections>
-                            <action selector="favButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ndv-I1-AFn"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="gTH-lE-nsZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8bg-g6-5WM"/>
                     <constraint firstAttribute="bottom" secondItem="m81-BG-rXg" secondAttribute="bottom" constant="20" id="CKn-Te-fma"/>
-                    <constraint firstItem="vIb-mU-d2i" firstAttribute="leading" secondItem="5oW-rE-o7y" secondAttribute="trailing" constant="10" id="EMI-gh-LTD"/>
                     <constraint firstItem="5oW-rE-o7y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Ede-3D-CVG"/>
                     <constraint firstItem="oTf-ka-Kkc" firstAttribute="leading" secondItem="m81-BG-rXg" secondAttribute="trailing" constant="5" id="N1z-tB-2gO"/>
                     <constraint firstAttribute="bottom" secondItem="Bb4-yz-hHH" secondAttribute="bottom" constant="20" id="O8s-Uv-x3a"/>
@@ -77,16 +63,14 @@
                     <constraint firstItem="5oW-rE-o7y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="fOE-2I-pja"/>
                     <constraint firstAttribute="bottom" secondItem="gTH-lE-nsZ" secondAttribute="bottom" id="fP1-1A-ft2"/>
                     <constraint firstItem="Bb4-yz-hHH" firstAttribute="leading" secondItem="oTf-ka-Kkc" secondAttribute="trailing" constant="5" id="fz7-dp-yV7"/>
-                    <constraint firstItem="vIb-mU-d2i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ivs-9w-dgT"/>
                     <constraint firstItem="gTH-lE-nsZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mWZ-I9-opH"/>
-                    <constraint firstAttribute="trailing" secondItem="vIb-mU-d2i" secondAttribute="trailing" constant="5" id="wjL-Hd-Koc"/>
+                    <constraint firstAttribute="trailing" secondItem="5oW-rE-o7y" secondAttribute="trailing" constant="20" id="xUG-kh-zmM"/>
                     <constraint firstAttribute="trailing" secondItem="gTH-lE-nsZ" secondAttribute="trailing" id="xwX-3S-0kI"/>
                     <constraint firstAttribute="trailing" secondItem="Bb4-yz-hHH" secondAttribute="trailing" constant="5" id="zze-gY-iI4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="favButton" destination="vIb-mU-d2i" id="8OZ-2B-Xdi"/>
                 <outlet property="placesAddress" destination="m81-BG-rXg" id="iSj-P3-hs0"/>
                 <outlet property="placesImage" destination="gTH-lE-nsZ" id="8PN-CG-pnB"/>
                 <outlet property="placesName" destination="5oW-rE-o7y" id="2dq-J6-1CF"/>
@@ -96,7 +80,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

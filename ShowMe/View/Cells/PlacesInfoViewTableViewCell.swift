@@ -1,14 +1,14 @@
 //
-//  PlacesInfoView.swift
+//  PlacesInfoViewTableViewCell.swift
 //  ShowMe
 //
-//  Created by SayajinPapuru on 14/07/2020.
+//  Created by SayajinPapuru on 24/08/2020.
 //  Copyright © 2020 sayajin papuru. All rights reserved.
 //
 
 import UIKit
 
-class PlacesInfoView: UIView {
+class PlacesInfoViewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var placesName: UILabel!
     @IBOutlet weak var placesAddress: UILabel!
@@ -36,6 +36,5 @@ class PlacesInfoView: UIView {
             }
         }
     }
-    
     
 }

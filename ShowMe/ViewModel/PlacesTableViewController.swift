@@ -61,7 +61,6 @@ class PlacesTableViewController: UITableViewController {
             selectedPlaces.append(key)
         }
         tableView.reloadData()
-        print("ok")
     }
 }
 

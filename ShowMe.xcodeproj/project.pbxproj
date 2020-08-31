@@ -34,6 +34,8 @@
 		B188A3A124BE454F003543B2 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A3A024BE454F003543B2 /* UIView+Extensions.swift */; };
 		B188A3AB24BE497C003543B2 /* PlacesInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A3A924BE497C003543B2 /* PlacesInfoView.swift */; };
 		B188A3AC24BE497C003543B2 /* PlacesInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B188A3AA24BE497C003543B2 /* PlacesInfoView.xib */; };
+		B1AD3C9824F4236700E34A45 /* PlacesInfoViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD3C9624F4236700E34A45 /* PlacesInfoViewTableViewCell.swift */; };
+		B1AD3C9924F4236700E34A45 /* PlacesInfoViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1AD3C9724F4236700E34A45 /* PlacesInfoViewTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		B188A3A024BE454F003543B2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B188A3A924BE497C003543B2 /* PlacesInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesInfoView.swift; sourceTree = "<group>"; };
 		B188A3AA24BE497C003543B2 /* PlacesInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesInfoView.xib; sourceTree = "<group>"; };
+		B1AD3C9624F4236700E34A45 /* PlacesInfoViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesInfoViewTableViewCell.swift; sourceTree = "<group>"; };
+		B1AD3C9724F4236700E34A45 /* PlacesInfoViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesInfoViewTableViewCell.xib; sourceTree = "<group>"; };
 		BBFC8361D504BD2826170697 /* Pods-ShowMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowMe.release.xcconfig"; path = "Target Support Files/Pods-ShowMe/Pods-ShowMe.release.xcconfig"; sourceTree = "<group>"; };
 		C49E07E4105FCCD87B592830 /* Pods-ShowMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowMeTests.debug.xcconfig"; path = "Target Support Files/Pods-ShowMeTests/Pods-ShowMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE0F953FDF84DB4261166B75 /* Pods_ShowMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShowMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +171,8 @@
 			children = (
 				B188A3A924BE497C003543B2 /* PlacesInfoView.swift */,
 				B188A3AA24BE497C003543B2 /* PlacesInfoView.xib */,
+				B1AD3C9624F4236700E34A45 /* PlacesInfoViewTableViewCell.swift */,
+				B1AD3C9724F4236700E34A45 /* PlacesInfoViewTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1556E75249BDEB6000914E8 /* LaunchScreen.storyboard in Resources */,
+				B1AD3C9924F4236700E34A45 /* PlacesInfoViewTableViewCell.xib in Resources */,
 				B1556E72249BDEB6000914E8 /* Assets.xcassets in Resources */,
 				B188A39D24BE3D8A003543B2 /* PlacesTableViewController.storyboard in Resources */,
 				B13BB07A24A50DF9003C651D /* Favorites.storyboard in Resources */,
@@ -440,6 +447,7 @@
 				B188A3A124BE454F003543B2 /* UIView+Extensions.swift in Sources */,
 				B188A3AB24BE497C003543B2 /* PlacesInfoView.swift in Sources */,
 				B148F92724C9DFF000102AF0 /* GooglePlace.swift in Sources */,
+				B1AD3C9824F4236700E34A45 /* PlacesInfoViewTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

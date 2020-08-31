@@ -9,7 +9,14 @@
 import Foundation
 import CoreData
 
-class CoreDataManager {
+protocol CoreData {
+    func createPlace(name: String, address: String, rating: Double)
+    func deleteAllPlaces()
+    func deletePlace(named name: String)
+    func isPlaceRegistered(with name: String) -> Bool
+}
+
+class CoreDataManager: CoreData {
     
     //MARK: - Properties
     
@@ -41,6 +48,19 @@ class CoreDataManager {
         placesFav.forEach { managedObjectContext.delete($0)}
         coreDataStack.saveContext()
     }
+    
+//    func savePlace() {
+//        coreDataManager?.createPlace(name: googlePlace?.name ?? "", address: googlePlace?.address ?? "", rating: googlePlace?.rating ?? 0.0)
+//    }
+//    
+//    private func checkFav() {
+//        guard let coreDataManager = coreDataManager else { return }
+//        if coreDataManager.isPlaceRegistered(with: googlePlace?.name ?? "") {
+//            coreDataManager.deletePlace(named: googlePlace?.name ?? "")
+//        } else {
+//            savePlace()
+//        }
+//    }
     
     func deletePlace(named name: String) {
         let request: NSFetchRequest<FavouritePlace> = FavouritePlace.fetchRequest()
