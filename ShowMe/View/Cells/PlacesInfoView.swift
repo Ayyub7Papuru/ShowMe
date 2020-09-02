@@ -8,22 +8,16 @@
 
 import UIKit
 
-protocol CoreDataHandler: class {
-    func registerPlace(place: GooglePlace)
-}
-
 class PlacesInfoView: UIView {
     
     @IBOutlet weak var placesName: UILabel!
     @IBOutlet weak var placesAddress: UILabel!
     @IBOutlet weak var placesImage: UIImageView!
     @IBOutlet weak var placesRate: UILabel!
-    @IBOutlet weak var favButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setXib()
-        addTapView()
     }
     
     required init?(coder: NSCoder) {
@@ -31,7 +25,6 @@ class PlacesInfoView: UIView {
         setXib()
     }
     
-    weak var delegate: CoreDataHandler?
     var place: GooglePlace? {
         didSet {
             placesName.text = place?.name
@@ -54,12 +47,6 @@ class PlacesInfoView: UIView {
         }
     }
     
-    
-    @IBAction func favButtonTapped(_ sender: UIButton) {
-        guard let place = place else { return }
-        delegate?.registerPlace(place: place)
-    }
-    
     // MARK: - Private Methods
     private func setXib() {
         let bundle = Bundle.init(for: PlacesInfoView.self)
@@ -69,11 +56,7 @@ class PlacesInfoView: UIView {
         }
     }
     
-    private func addTapView() {
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapGestureView)))
-    }
-    
-    @objc func tapGestureView() {
-        
+    private func setUIView() {
+        layer.cornerRadius = 20
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 protocol CoreData {
-    func createPlace(name: String, address: String, rating: Double)
+    func createPlace(name: String, address: String, rating: Double, longitude: Double, latitude: Double)
     func deleteAllPlaces()
     func deletePlace(named name: String)
     func isPlaceRegistered(with name: String) -> Bool
@@ -36,11 +36,13 @@ class CoreDataManager: CoreData {
     
     //MARK: - Functions
     
-    func createPlace(name: String, address: String, rating: Double){
+    func createPlace(name: String, address: String, rating: Double, longitude: Double, latitude: Double){
         let placesFav = FavouritePlace(context: managedObjectContext)
         placesFav.name = name
         placesFav.address = address
         placesFav.rating = rating
+        placesFav.latitude = latitude
+        placesFav.longitude = longitude
         coreDataStack.saveContext()
     }
     

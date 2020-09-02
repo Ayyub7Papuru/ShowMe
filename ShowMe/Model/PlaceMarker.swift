@@ -15,7 +15,7 @@ class PlaceMarker: GMSMarker, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     let place: GooglePlace
     
-    init(place: GooglePlace, availableTypes: [String], coordinate: CLLocationCoordinate2D) {
+    init(place: GooglePlace = GooglePlace(dictionary: [:], acceptedTypes: [""]), availableTypes: [String] = [""], coordinate: CLLocationCoordinate2D) {
         self.place = place
         self.coordinate = coordinate
         super.init()
@@ -30,6 +30,14 @@ class PlaceMarker: GMSMarker, MKAnnotation {
         guard let location = place.address else { return nil }
         
         let addressDict = [CNPostalAddressStreetKey: location]
+        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = place.name
+        return mapItem
+    }
+    
+    func createMapItem(adress: String) -> MKMapItem {
+        let addressDict = [CNPostalAddressStreetKey: adress]
         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = place.name

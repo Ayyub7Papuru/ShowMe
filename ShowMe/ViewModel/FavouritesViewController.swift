@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import GoogleMaps
+import Contacts
+import MapKit
 
 class FavouritesViewController: UIViewController {
 
@@ -35,6 +38,25 @@ class FavouritesViewController: UIViewController {
     private func setTableView() {
         favouritesTableView.register(UINib(nibName: "PlacesInfoViewTableViewCell", bundle: nil), forCellReuseIdentifier: "placesFavCell")
     }
+    
+    private func selectCell(marker: FavouritePlace) {
+        let alert = UIAlertController(title: "Select Actions", message: "", preferredStyle: .actionSheet)
+        let gps = UIAlertAction(title: "GPS", style: .default) { (_) in
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+            let mapItem = PlaceMarker(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(floatLiteral: marker.latitude), longitude: CLLocationDegrees(floatLiteral: marker.longitude))).createMapItem(adress: marker.address ?? "")
+            mapItem.openInMaps(launchOptions: launchOptions)
+        }
+        let remove = UIAlertAction(title: "Remove", style: .default) { (_) in
+            self.coreDataManager.deletePlace(named: marker.name ?? "")
+            self.favouritesTableView.reloadData()
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(gps)
+        alert.addAction(remove)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - table View
@@ -47,6 +69,10 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = favouritesTableView.dequeueReusableCell(withIdentifier: "placesFavCell", for: indexPath) as! PlacesInfoViewTableViewCell
         cell.favouritePlace = coreDataManager.placesFav[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectCell(marker: coreDataManager.placesFav[indexPath.row])
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
