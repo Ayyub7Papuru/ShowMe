@@ -84,7 +84,7 @@ class MapsViewController: UIViewController {
             switch result {
             case .success(let welcome):
                 welcome.results.forEach { place in
-                    let marker = PlaceMarker(place: place, availableTypes: self.searchedPlaces, coordinate: coordinate)
+                    let marker = PlaceMarker(place: place, availableTypes: self.searchedPlaces, coordinate: coordinate, selectedPlace: self.searchedPlaces)
                     marker.map = self.mapView
                 }
             case .failure(let error):

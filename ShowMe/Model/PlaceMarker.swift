@@ -14,15 +14,19 @@ import Contacts
 class PlaceMarker: GMSMarker, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     let place: GooglePlace
+    let selectedPlace: [String]
     
-    init(place: GooglePlace, availableTypes: [String] = [""], coordinate: CLLocationCoordinate2D) {
+    init(place: GooglePlace, availableTypes: [String] = [""], coordinate: CLLocationCoordinate2D, selectedPlace: [String] = [""]) {
         self.place = place
         self.coordinate = coordinate
+        self.selectedPlace = selectedPlace
         super.init()
         
         position.latitude = place.geometry.location.lat
         position.longitude = place.geometry.location.lng
-        icon = UIImage(named: "\(place.types.first!)_pin")
+        
+        let places = place.types.filter { selectedPlace.contains($0) }
+        _ = places.map { icon = UIImage(named: "\($0)_pin") }
         groundAnchor = CGPoint(x: 0.5, y: 1)
         appearAnimation = .pop
     }
