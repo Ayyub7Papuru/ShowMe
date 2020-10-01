@@ -29,17 +29,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3j-pO-DdU">
-                    <rect key="frame" x="328" y="10" width="45" height="45"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="45" id="Lzd-HY-A3o"/>
-                        <constraint firstAttribute="height" constant="45" id="NNA-eh-1rV"/>
-                    </constraints>
-                    <state key="normal" image="heartEmpty"/>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cby-zl-ggY">
-                    <rect key="frame" x="15" y="10" width="308" height="23.5"/>
+                    <rect key="frame" x="15" y="10" width="348" height="26"/>
                     <color key="backgroundColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="0.50379922939999999" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="vTQ-bc-RrW"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="19"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -51,6 +46,9 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICn-t3-mZQ">
                     <rect key="frame" x="15" y="214" width="302" height="26"/>
                     <color key="backgroundColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="0.50379922939999999" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="acr-bP-p2m"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="21"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -63,25 +61,22 @@
                 <constraint firstItem="9S0-xh-u04" firstAttribute="trailing" secondItem="MvG-Dp-Tdg" secondAttribute="trailing" constant="5" id="ESh-Xt-mbi"/>
                 <constraint firstItem="cby-zl-ggY" firstAttribute="leading" secondItem="YZR-ZO-pQc" secondAttribute="leading" constant="15" id="Jad-EP-aK4"/>
                 <constraint firstItem="hU4-zN-SJn" firstAttribute="leading" secondItem="9S0-xh-u04" secondAttribute="leading" id="Joz-UY-hmS"/>
-                <constraint firstItem="N3j-pO-DdU" firstAttribute="top" secondItem="YZR-ZO-pQc" secondAttribute="top" constant="10" id="L2n-UB-9Qc"/>
                 <constraint firstItem="hU4-zN-SJn" firstAttribute="top" secondItem="YZR-ZO-pQc" secondAttribute="top" id="OWq-xb-8T0"/>
                 <constraint firstItem="MvG-Dp-Tdg" firstAttribute="leading" secondItem="0AO-O8-7Ff" secondAttribute="trailing" constant="5" id="R0K-Bm-hJa"/>
                 <constraint firstItem="ICn-t3-mZQ" firstAttribute="leading" secondItem="9S0-xh-u04" secondAttribute="leading" constant="15" id="UQE-Ct-lR2"/>
                 <constraint firstItem="0AO-O8-7Ff" firstAttribute="leading" secondItem="ICn-t3-mZQ" secondAttribute="trailing" constant="5" id="YB7-xY-nk1"/>
                 <constraint firstItem="9S0-xh-u04" firstAttribute="bottom" secondItem="0AO-O8-7Ff" secondAttribute="bottom" constant="10" id="e2x-6K-rFJ"/>
-                <constraint firstItem="9S0-xh-u04" firstAttribute="trailing" secondItem="N3j-pO-DdU" secondAttribute="trailing" constant="5" id="f2q-XW-ZrR"/>
+                <constraint firstAttribute="trailing" secondItem="cby-zl-ggY" secondAttribute="trailing" constant="15" id="eBB-Og-jOg"/>
                 <constraint firstItem="cby-zl-ggY" firstAttribute="top" secondItem="YZR-ZO-pQc" secondAttribute="top" constant="10" id="f4O-ym-oji"/>
                 <constraint firstItem="hU4-zN-SJn" firstAttribute="trailing" secondItem="9S0-xh-u04" secondAttribute="trailing" id="mRl-5t-sKj"/>
-                <constraint firstItem="N3j-pO-DdU" firstAttribute="leading" secondItem="cby-zl-ggY" secondAttribute="trailing" constant="5" id="r5y-mN-8Ga"/>
                 <constraint firstItem="9S0-xh-u04" firstAttribute="bottom" secondItem="hU4-zN-SJn" secondAttribute="bottom" id="zU1-62-DGa"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="9S0-xh-u04"/>
-            <point key="canvasLocation" x="332" y="610"/>
+            <point key="canvasLocation" x="287" y="602"/>
         </view>
     </objects>
     <resources>
-        <image name="heartEmpty" width="64" height="64"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

@@ -9,7 +9,7 @@ target 'ShowMe' do
   pod 'Alamofire', '4.9.1'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'SwiftyJSON'
+  pod 'SDWebImage'
 
   target 'ShowMeTests' do
     inherit! :search_paths

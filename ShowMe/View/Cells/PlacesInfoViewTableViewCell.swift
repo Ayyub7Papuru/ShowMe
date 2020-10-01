@@ -24,11 +24,7 @@ class PlacesInfoViewTableViewCell: UITableViewCell {
             placesName.text = favouritePlace?.name
             placesAddress.text = favouritePlace?.address
             placesRate.text = favouritePlace?.rating.description
-            if let data = favouritePlace?.image {
-                placesImage.image = UIImage(data: data)
-            } else {
-                placesImage.image = UIImage(named: "cocktail")
-            }
+            placesImage.image = UIImage(data: favouritePlace?.image ?? Data())
         }
     }
 }

@@ -43,7 +43,7 @@ class FavouritesViewController: UIViewController {
         let alert = UIAlertController(title: "Select Actions", message: "", preferredStyle: .actionSheet)
         let gps = UIAlertAction(title: "GPS", style: .default) { (_) in
             let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-            let mapItem = PlaceMarker(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(floatLiteral: marker.latitude), longitude: CLLocationDegrees(floatLiteral: marker.longitude))).createMapItem(adress: marker.address ?? "")
+            let mapItem = PlaceMarker(place: createGooglePlace(favoritePlace: marker), coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(floatLiteral: marker.latitude), longitude: CLLocationDegrees(floatLiteral: marker.longitude))).createMapItem(adress: marker.address ?? "")
             mapItem.openInMaps(launchOptions: launchOptions)
         }
         let remove = UIAlertAction(title: "Remove", style: .default) { (_) in
@@ -81,10 +81,14 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let label = UILabel()
-        label.text = "Add some favorites places"
+        label.text = "Add some places"
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         label.textAlignment = .center
         label.textColor = .darkGray
         return label
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return coreDataManager.placesFav.isEmpty ?? true ? 200:0
     }
 }

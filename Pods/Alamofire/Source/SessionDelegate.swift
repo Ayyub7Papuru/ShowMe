@@ -291,8 +291,8 @@ extension SessionDelegate: URLSessionDelegate {
     /// Tells the delegate that all messages enqueued for a session have been delivered.
     ///
     /// - parameter session: The session that no longer has any outstanding requests.
-    open func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-        sessionDidFinishEventsForBackgroundURLSession?(session)
+    open func urlSessionDidFinishEvents(forBackgroundURLSession placeSession: URLSession) {
+        sessionDidFinishEventsForBackgroundURLSession?(placeSession)
     }
 
 #endif

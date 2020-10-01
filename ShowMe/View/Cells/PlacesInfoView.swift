@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PlacesInfoView: UIView {
     
@@ -14,6 +15,8 @@ class PlacesInfoView: UIView {
     @IBOutlet weak var placesAddress: UILabel!
     @IBOutlet weak var placesImage: UIImageView!
     @IBOutlet weak var placesRate: UILabel!
+    
+    let googleService = GoogleService()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,9 +31,9 @@ class PlacesInfoView: UIView {
     var place: GooglePlace? {
         didSet {
             placesName.text = place?.name
-            placesAddress.text = place?.address
-            placesImage.image = place?.photo
-            placesRate.text = place?.rating.description
+            placesAddress.text = place?.vicinity
+            placesImage.sd_setImage(with: URL(string: googleService.fetchPhoto(reference: place?.photos?.first?.photoReference ?? "")), placeholderImage: UIImage())
+            placesRate.text = String(describing: place?.rating)
         }
     }
     
@@ -38,11 +41,11 @@ class PlacesInfoView: UIView {
         didSet {
             placesName.text = favouritePlace?.name
             placesAddress.text = favouritePlace?.address
-            placesRate.text = favouritePlace?.rating.description
-            if let data = favouritePlace?.image {
-                placesImage.image = UIImage(data: data)
+            placesRate.text = String(describing: favouritePlace?.rating)
+            if let imageData = favouritePlace?.image {
+                placesImage.image = UIImage(data: imageData)
             } else {
-                placesImage.image = UIImage(named: "cocktail")
+                placesImage.image = UIImage(named: "")
             }
         }
     }

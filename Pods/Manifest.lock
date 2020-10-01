@@ -7,27 +7,29 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (3.9.0):
     - GoogleMaps/Base (= 3.9.0)
-  - SwiftyJSON (5.0.0)
+  - SDWebImage (5.6.0):
+    - SDWebImage/Core (= 5.6.0)
+  - SDWebImage/Core (5.6.0)
 
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
   - GoogleMaps
   - GooglePlaces
-  - SwiftyJSON
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - GoogleMaps
     - GooglePlaces
-    - SwiftyJSON
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
   GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  SDWebImage: 21b19f56b4226cdfe3aefe4e6848dc43ed129a86
 
-PODFILE CHECKSUM: c750f24debf793b48949ddcbc4aab16998833f14
+PODFILE CHECKSUM: 467cbcbc3305dc078412398f113c3249712c3413
 
 COCOAPODS: 1.9.0
