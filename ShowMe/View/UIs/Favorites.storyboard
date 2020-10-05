@@ -16,9 +16,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="622-ne-e9i">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="iXa-ry-A8y" kind="relationship" relationship="rootViewController" id="SlM-ce-Cm6"/>
@@ -55,7 +52,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j84-8y-q4i"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorites" id="yIe-nY-V5T"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="yIe-nY-V5T">
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="nZf-BW-dLN">
+                            <color key="tintColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="clearAllFavorites:" destination="iXa-ry-A8y" id="83p-s3-K0o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="favouritesTableView" destination="BJD-Kg-xff" id="qFR-so-hYa"/>
                     </connections>

@@ -43,7 +43,7 @@ class FavouritesViewController: UIViewController {
         let alert = UIAlertController(title: "Select Actions", message: "", preferredStyle: .actionSheet)
         let gps = UIAlertAction(title: "GPS", style: .default) { (_) in
             let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-            let mapItem = PlaceMarker(place: createGooglePlace(favoritePlace: marker), coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(floatLiteral: marker.latitude), longitude: CLLocationDegrees(floatLiteral: marker.longitude))).createMapItem(adress: marker.address ?? "")
+            let mapItem = PlaceMarker(place: createGooglePlace(favoritePlace: marker)).createMapItem(adress: marker.address ?? "")
             mapItem.openInMaps(launchOptions: launchOptions)
         }
         let remove = UIAlertAction(title: "Remove", style: .default) { (_) in
@@ -57,6 +57,12 @@ class FavouritesViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func clearAllFavorites(_ sender: UIBarButtonItem) {
+        coreDataManager.deleteAllPlaces()
+        favouritesTableView.reloadData()
+    }
+    
 }
 
 // MARK: - table View

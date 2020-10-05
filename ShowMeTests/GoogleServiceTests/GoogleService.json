@@ -1,0 +1,52 @@
+{
+"results": [
+   {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+         "location": {
+            "lat": 44.20604669999999,
+            "lng": 0.6271272999999999
+         },
+         "viewport": {
+            "northeast": {
+               "lat": 44.20744703029149,
+               "lng": 0.628333480291502
+            },
+            "southwest": {
+               "lat": 44.2047490697085,
+               "lng": 0.625635519708498
+            }
+         }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/movies-71.png",
+      "name": "Cinéma CGR Agen",
+      "opening_hours": {
+         "open_now": true
+      },
+      "photos": [
+         {
+            "height": 3264,
+            "html_attributions": [
+               "<a href=\"https://maps.google.com/maps/contrib/108919803887619994156\">Cinéma CGR Agen</a>"
+            ],
+            "photo_reference": "CmRaAAAAJ8r8e1VeUr2uDK__PdWLC20HA2RNuuwj_ls2C4uil9sFJS9rMxogdFaoWDPyFvaWjTup3uYp7UyzkXz9_siTmZxI2M4fn5z_qRBUcmrT0P_6XZByGjiMScD0x-acgyquEhBROO8PsS1HhJa4aq7ZfMonGhQ4Bsc6gNewC-f00f2a4cEtXchzYQ",
+            "width": 2448
+         }
+      ],
+      "place_id": "ChIJYYbSrh2zqxIRUu938kTGzy4",
+      "plus_code": {
+         "compound_code": "6J4G+CV Agen, France",
+         "global_code": "8FP26J4G+CV"
+      },
+      "rating": 4.1,
+      "reference": "ChIJYYbSrh2zqxIRUu938kTGzy4",
+      "scope": "GOOGLE",
+      "types": [
+         "movie_theater",
+         "point_of_interest",
+         "establishment"
+      ],
+      "user_ratings_total": 2130,
+      "vicinity": "Adresse postale, 9 Rue de la Prune, Place du Pin, Agen"
+   }
+}

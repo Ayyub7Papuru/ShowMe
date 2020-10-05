@@ -15,6 +15,7 @@ class PlacesInfoView: UIView {
     @IBOutlet weak var placesAddress: UILabel!
     @IBOutlet weak var placesImage: UIImageView!
     @IBOutlet weak var placesRate: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let googleService = GoogleService()
     

@@ -18,7 +18,7 @@ class PlacesTableViewController: UITableViewController {
     
     let gg = MapsViewController()
     // MARK: - Properties
-    private let possiblePlacesDictionnary = ["bar": "Bar", "grocery_or_supermarket": "Supermarket", "restaurant": "Restaurant", "atm": "ATM", "cinema": "Cinema", "embassy": "Embassy", "gas_station": "Gas Station", "hospital": "Hospital", "hotel": "Hotel", "museum": "Museum", "park": "Park", "parking": "Parking", "police": "Police", "shopping_mall": "Mall", "tourist_attraction": "Places of interests"]
+    private let possiblePlacesDictionnary = ["bar": "Bar", "grocery_or_supermarket": "Supermarket", "restaurant": "Restaurant", "atm": "ATM", "embassy": "Embassy", "gas_station": "Gas Station", "hotel": "Hotel", "museum": "Museum", "park": "Park", "parking": "Parking", "tourist_attraction": "Places of interests"]
     
     private var sortedKeys: [String] {
         return possiblePlacesDictionnary.keys.sorted()
@@ -53,7 +53,7 @@ class PlacesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        selectedPlaces.removeAll()
         let key = sortedKeys[indexPath.row]
         if selectedPlaces.contains(key) {
             selectedPlaces = selectedPlaces.filter({$0 != key})

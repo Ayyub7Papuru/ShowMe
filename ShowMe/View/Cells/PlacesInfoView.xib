@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlacesInfoView" customModule="ShowMe" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="Slk-FR-gSs" id="ZFU-0M-mmw"/>
                 <outlet property="placesAddress" destination="ICn-t3-mZQ" id="hAs-hJ-ELO"/>
                 <outlet property="placesImage" destination="hU4-zN-SJn" id="IbE-2H-J3X"/>
                 <outlet property="placesName" destination="cby-zl-ggY" id="AnR-0z-hcG"/>
@@ -22,11 +23,13 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hU4-zN-SJn">
                     <rect key="frame" x="0.0" y="0.0" width="378" height="250"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvG-Dp-Tdg">
                     <rect key="frame" x="349" y="219.5" width="24" height="20.5"/>
+                    <color key="backgroundColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="0.50379922939999999" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cby-zl-ggY">
@@ -46,13 +49,13 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICn-t3-mZQ">
                     <rect key="frame" x="15" y="214" width="302" height="26"/>
                     <color key="backgroundColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="0.50379922939999999" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="26" id="acr-bP-p2m"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="21"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Slk-FR-gSs">
+                    <rect key="frame" x="170.5" y="106.5" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -69,6 +72,8 @@
                 <constraint firstAttribute="trailing" secondItem="cby-zl-ggY" secondAttribute="trailing" constant="15" id="eBB-Og-jOg"/>
                 <constraint firstItem="cby-zl-ggY" firstAttribute="top" secondItem="YZR-ZO-pQc" secondAttribute="top" constant="10" id="f4O-ym-oji"/>
                 <constraint firstItem="hU4-zN-SJn" firstAttribute="trailing" secondItem="9S0-xh-u04" secondAttribute="trailing" id="mRl-5t-sKj"/>
+                <constraint firstItem="Slk-FR-gSs" firstAttribute="centerX" secondItem="YZR-ZO-pQc" secondAttribute="centerX" id="sb9-Nc-UUU"/>
+                <constraint firstItem="Slk-FR-gSs" firstAttribute="centerY" secondItem="YZR-ZO-pQc" secondAttribute="centerY" id="ynb-Qd-dsJ"/>
                 <constraint firstItem="9S0-xh-u04" firstAttribute="bottom" secondItem="hU4-zN-SJn" secondAttribute="bottom" id="zU1-62-DGa"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -22,7 +22,7 @@ class MapsViewController: UIViewController {
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
-    var searchedPlaces = ["bar", "grocery_or_supermarket", "restaurant", "atm", "cinema", "embassy", "gas_station", "hospital", "hotel", "museum", "park", "parking", "police", "shopping_mall", "tourist_attraction"]
+    var searchedPlaces = [String]()
     
     private var locationManager = CLLocationManager()
     let dataProvider = GoogleService()
@@ -84,7 +84,7 @@ class MapsViewController: UIViewController {
             switch result {
             case .success(let welcome):
                 welcome.results.forEach { place in
-                    let marker = PlaceMarker(place: place, availableTypes: self.searchedPlaces, coordinate: coordinate, selectedPlace: self.searchedPlaces)
+                    let marker = PlaceMarker(place: place, availableTypes: self.searchedPlaces)
                     marker.map = self.mapView
                 }
             case .failure(let error):
@@ -189,17 +189,20 @@ extension MapsViewController: GMSMapViewDelegate {
     }
     
     private func setMarkerInfo(placeMarker: PlaceMarker) -> UIView {
-        let infoView = PlacesInfoView(frame: CGRect(x: 0, y: 0, width: 200, height: 150))
+        let infoView = PlacesInfoView(frame: CGRect(x: 0, y: 0, width: 250, height: 200))
         infoView.clipsToBounds = true
         infoView.layer.cornerRadius = 20
-        infoView.placesName.text = placeMarker.place.name
-        infoView.placesAddress.text = placeMarker.place.vicinity
-        infoView.placesRate.text = String(placeMarker.place.rating ?? 0)
+        infoView.activityIndicator.startAnimating()
         infoView.placesImage.sd_setImage(with: URL(string: dataProvider.fetchPhoto(reference: placeMarker.place.photos?.first?.photoReference ?? "")), placeholderImage: UIImage()) { (image, error, cache, url) in
-            guard let image = image else { return }
+            infoView.activityIndicator.stopAnimating()
+            infoView.activityIndicator.isHidden = true
+            infoView.placesImage.image = image
             self.placeImage = image
         }
         
+        infoView.placesName.text = placeMarker.place.name
+        infoView.placesAddress.text = placeMarker.place.vicinity
+        infoView.placesRate.text = String(placeMarker.place.rating ?? 0)
         googlePlace = placeMarker.place
         return infoView
     }

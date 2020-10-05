@@ -17,7 +17,6 @@ class GoogleService {
     
     // MARK: - Private Properties
     
-    private var placesTask: URLSessionDataTask?
     private let googleAPIKey = "AIzaSyD1oGZHmqOXfhC_8MFpBgQ8ckSaHx4t0C4"
     private var placeSession: URLSession
     private var task: URLSessionTask?
@@ -28,13 +27,13 @@ class GoogleService {
     
     // MARK: - Public Methods
     
-    func fetchPlacesNearCoordinate(_ coordinate: CLLocationCoordinate2D, radius: Double, types:[String], callback: @escaping (Result<Welcome, Error>) -> Void) {
+    func fetchPlacesNearCoordinate(_ coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(), radius: Double = 0.0, types:[String], callback: @escaping (Result<Welcome, Error>) -> Void) {
         guard let url = URL(string: createUrlGooglePlace(coordinate, radius: radius, types: types)) else { return }
         
         task?.cancel()
         task = placeSession.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
-                guard let data = data else {
+                guard let data = data, error == nil else {
                     callback(.failure(PlacesError.NoData))
                     return
                 }
@@ -48,7 +47,7 @@ class GoogleService {
                     callback(.failure(PlacesError.NoJSON))
                     return
                 }
-                callback(.success(dataDecoded))
+                callback(.success(dataDecoded.self))
             }
         }
         task?.resume()
