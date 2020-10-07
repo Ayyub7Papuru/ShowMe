@@ -71,7 +71,7 @@ class GoogleServiceTest: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
     }
     
-    func testFetchPlacesShouldPostFailedCallbackIfCorrectDataAndResponseOK() {
+    func testFetchPlacesShouldPostSuccedCallbackIfCorrectDataAndResponseOK() {
         let googleService = GoogleService(placeSession: URLSessionFake(data: FakeResponseData.googleServiceCorrectData, response: FakeResponseData.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "waiting for queue change")

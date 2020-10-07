@@ -32,7 +32,6 @@ class GoogleService {
         
         task?.cancel()
         task = placeSession.dataTask(with: url) { (data, response, error) in
-            DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     callback(.failure(PlacesError.NoData))
                     return
@@ -48,7 +47,6 @@ class GoogleService {
                     return
                 }
                 callback(.success(dataDecoded.self))
-            }
         }
         task?.resume()
     }

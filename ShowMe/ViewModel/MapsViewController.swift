@@ -45,8 +45,8 @@ class MapsViewController: UIViewController {
         guard
             let navigationController = segue.destination as? UINavigationController,
             let controller = navigationController.topViewController as? PlacesTableViewController
-            else {
-                return
+        else {
+            return
         }
         controller.selectedPlaces = searchedPlaces
         controller.delegate = self
@@ -80,15 +80,17 @@ class MapsViewController: UIViewController {
     
     func fetchPlaces(near coordinate: CLLocationCoordinate2D) {
         mapView.clear()
-        dataProvider.fetchPlacesNearCoordinate(coordinate, radius: searchRadius, types: searchedPlaces) { result in
-            switch result {
-            case .success(let welcome):
-                welcome.results.forEach { place in
-                    let marker = PlaceMarker(place: place, availableTypes: self.searchedPlaces)
-                    marker.map = self.mapView
+        DispatchQueue.main.async {
+            self.dataProvider.fetchPlacesNearCoordinate(coordinate, radius: self.searchRadius, types: self.searchedPlaces) { result in
+                switch result {
+                case .success(let welcome):
+                    welcome.results.forEach { place in
+                        let marker = PlaceMarker(place: place, availableTypes: self.searchedPlaces)
+                        marker.map = self.mapView
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
                 }
-            case .failure(let error):
-                print(error.localizedDescription)
             }
         }
     }

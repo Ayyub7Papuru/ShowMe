@@ -40,6 +40,8 @@
 		B1D41596252B7D13004B3D39 /* GoogleServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D41595252B7D13004B3D39 /* GoogleServiceTest.swift */; };
 		B1D41599252B7DB7004B3D39 /* GoogleService.json in Resources */ = {isa = PBXBuildFile; fileRef = B1D41598252B7DB7004B3D39 /* GoogleService.json */; };
 		B1D54D182524991D0013B9EC /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D54D172524991D0013B9EC /* UIImage+Extensions.swift */; };
+		B1F25DD6252DFB8700787E67 /* CoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F25DD5252DFB8700787E67 /* CoreDataTest.swift */; };
+		B1F25DE2252DFC5F00787E67 /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F25DE1252DFC5F00787E67 /* MockCoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		B1D41595252B7D13004B3D39 /* GoogleServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleServiceTest.swift; sourceTree = "<group>"; };
 		B1D41598252B7DB7004B3D39 /* GoogleService.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleService.json; sourceTree = "<group>"; };
 		B1D54D172524991D0013B9EC /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		B1F25DD5252DFB8700787E67 /* CoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTest.swift; sourceTree = "<group>"; };
+		B1F25DE1252DFC5F00787E67 /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
 		BBFC8361D504BD2826170697 /* Pods-ShowMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowMe.release.xcconfig"; path = "Target Support Files/Pods-ShowMe/Pods-ShowMe.release.xcconfig"; sourceTree = "<group>"; };
 		C49E07E4105FCCD87B592830 /* Pods-ShowMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowMeTests.debug.xcconfig"; path = "Target Support Files/Pods-ShowMeTests/Pods-ShowMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE0F953FDF84DB4261166B75 /* Pods_ShowMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShowMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +228,7 @@
 		B1556E7E249BDEB6000914E8 /* ShowMeTests */ = {
 			isa = PBXGroup;
 			children = (
+				B1F25DD4252DFB6B00787E67 /* CoreDataTests */,
 				B1D41597252B7D8D004B3D39 /* GoogleServiceTests */,
 				B1556E81249BDEB6000914E8 /* Info.plist */,
 				B1D41591252B7C9B004B3D39 /* FakeResponseData.swift */,
@@ -248,6 +253,15 @@
 				B1D41598252B7DB7004B3D39 /* GoogleService.json */,
 			);
 			path = GoogleServiceTests;
+			sourceTree = "<group>";
+		};
+		B1F25DD4252DFB6B00787E67 /* CoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1F25DD5252DFB8700787E67 /* CoreDataTest.swift */,
+				B1F25DE1252DFC5F00787E67 /* MockCoreDataStack.swift */,
+			);
+			path = CoreDataTests;
 			sourceTree = "<group>";
 		};
 		B3B1F87DDE7C65D4B7D55DC9 /* Frameworks */ = {
@@ -477,9 +491,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1F25DD6252DFB8700787E67 /* CoreDataTest.swift in Sources */,
 				B1D41596252B7D13004B3D39 /* GoogleServiceTest.swift in Sources */,
 				B1D41594252B7CBF004B3D39 /* URLSessionFake.swift in Sources */,
 				B1D41592252B7C9B004B3D39 /* FakeResponseData.swift in Sources */,
+				B1F25DE2252DFC5F00787E67 /* MockCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
