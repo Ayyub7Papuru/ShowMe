@@ -10,8 +10,6 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     
-    
-
     @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var sateliteStyleSwitch: UISwitch!
     @IBOutlet var settingsTableView: UITableView!
@@ -34,7 +32,6 @@ class SettingsTableViewController: UITableViewController {
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
     }
-    
     
     private func updateDarkMode() {
         let darkMode = traitCollection.userInterfaceStyle == .dark ? true : false

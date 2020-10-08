@@ -15,9 +15,8 @@ class PlacesInfoView: UIView {
     @IBOutlet weak var placesAddress: UILabel!
     @IBOutlet weak var placesImage: UIImageView!
     @IBOutlet weak var placesRate: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    let googleService = GoogleService()
+    var mapsVC: MapsViewController?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,7 +32,7 @@ class PlacesInfoView: UIView {
         didSet {
             placesName.text = place?.name
             placesAddress.text = place?.vicinity
-            placesImage.sd_setImage(with: URL(string: googleService.fetchPhoto(reference: place?.photos?.first?.photoReference ?? "")), placeholderImage: UIImage())
+            placesImage.sd_setImage(with: URL(string: mapsVC?.mapsViewModel.dataProvider.fetchPhoto(reference: place?.photos?.first?.photoReference ?? "") ?? ""), placeholderImage: UIImage())
             placesRate.text = String(describing: place?.rating)
         }
     }

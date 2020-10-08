@@ -16,26 +16,18 @@ protocol PlacesTableViewControllerDelegate: class {
 // MARK: - Class
 class PlacesTableViewController: UITableViewController {
     
-    let gg = MapsViewController()
-    // MARK: - Properties
-    private let possiblePlacesDictionnary = ["bar": "Bar", "grocery_or_supermarket": "Supermarket", "restaurant": "Restaurant", "atm": "ATM", "embassy": "Embassy", "gas_station": "Gas Station", "hotel": "Hotel", "museum": "Museum", "park": "Park", "parking": "Parking", "tourist_attraction": "Places of interests"]
-    
-    private var sortedKeys: [String] {
-        return possiblePlacesDictionnary.keys.sorted()
-    }
-    
     weak var delegate: PlacesTableViewControllerDelegate?
-    var selectedPlaces: [String] = []
+    public let placeTableViewModel = PlacesTableViewModel()
     
     // MARK: - Actions
     @IBAction func donePressed(_sender: AnyObject) {
-        delegate?.placesController(didSelectPlaces: selectedPlaces)
+        delegate?.placesController(didSelectPlaces: placeTableViewModel.selectedPlaces)
         dismiss(animated: true)
     }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return possiblePlacesDictionnary.count
+        return placeTableViewModel.possiblePlacesDictionnary.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -43,23 +35,17 @@ class PlacesTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "placesCell", for: indexPath)
-        let key = sortedKeys[indexPath.row]
-        let type = possiblePlacesDictionnary[key]
+        let key = placeTableViewModel.sortedKeys[indexPath.row]
+        let type = placeTableViewModel.possiblePlacesDictionnary[key]
         cell.textLabel?.text = type
         cell.imageView?.image = UIImage(named: key)
-        cell.accessoryType = selectedPlaces.contains(key) ? .checkmark : .none
+        cell.accessoryType = placeTableViewModel.selectedPlaces.contains(key) ? .checkmark : .none
         cell.tintColor = .purple
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedPlaces.removeAll()
-        let key = sortedKeys[indexPath.row]
-        if selectedPlaces.contains(key) {
-            selectedPlaces = selectedPlaces.filter({$0 != key})
-        } else {
-            selectedPlaces.append(key)
-        }
+        placeTableViewModel.didSelectPlacesTableView(indexPath: indexPath)
         tableView.reloadData()
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import CoreLocation
 @testable import ShowMe
 
 class GoogleServiceTest: XCTestCase {
@@ -15,7 +16,7 @@ class GoogleServiceTest: XCTestCase {
         let googleService = GoogleService(placeSession: URLSessionFake(data: nil, response: nil, error: FakeResponseData.googleServiceError))
         
         let expectation = XCTestExpectation(description: "waiting for queue change")
-        googleService.fetchPlacesNearCoordinate(types: [""], callback: { (result) in
+        googleService.fetchPlacesNearCoordinate(CLLocationCoordinate2D(), radius: 0.0, types: [""], callback: { (result) in
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
                 return
@@ -30,7 +31,7 @@ class GoogleServiceTest: XCTestCase {
         let googleService = GoogleService(placeSession: URLSessionFake(data: nil, response: nil, error: nil ))
         
         let expectation = XCTestExpectation(description: "waiting for queue change")
-        googleService.fetchPlacesNearCoordinate(types: [""], callback: { (result) in
+        googleService.fetchPlacesNearCoordinate(CLLocationCoordinate2D(), radius: 0.0, types: [""], callback: { (result) in
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
                 return
@@ -45,7 +46,7 @@ class GoogleServiceTest: XCTestCase {
         let googleService = GoogleService(placeSession: URLSessionFake(data: FakeResponseData.googleServiceCorrectData, response: FakeResponseData.responseKO, error: nil))
         
         let expectation = XCTestExpectation(description: "waiting for queue change")
-        googleService.fetchPlacesNearCoordinate(types: [""], callback: { (result) in
+        googleService.fetchPlacesNearCoordinate(CLLocationCoordinate2D(), radius: 0.0, types: [""], callback: { (result) in
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
                 return
@@ -60,7 +61,7 @@ class GoogleServiceTest: XCTestCase {
         let googleService = GoogleService(placeSession: URLSessionFake(data: FakeResponseData.googleServiceIncorrectData, response: FakeResponseData.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "waiting for queue change")
-        googleService.fetchPlacesNearCoordinate(types: [""], callback: { (result) in
+        googleService.fetchPlacesNearCoordinate(CLLocationCoordinate2D(), radius: 0.0, types: [""], callback: { (result) in
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
                 return
@@ -75,7 +76,7 @@ class GoogleServiceTest: XCTestCase {
         let googleService = GoogleService(placeSession: URLSessionFake(data: FakeResponseData.googleServiceCorrectData, response: FakeResponseData.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "waiting for queue change")
-        googleService.fetchPlacesNearCoordinate(types: [""], callback: { (result) in
+        googleService.fetchPlacesNearCoordinate(CLLocationCoordinate2D(), radius: 0.0, types: [""], callback: { (result) in
             guard case .success(let results) = result else {
                 XCTFail("Test request method with an error failed.")
                 return
@@ -85,4 +86,14 @@ class GoogleServiceTest: XCTestCase {
         })
         wait(for: [expectation], timeout: 0.01)
     }
+    
+    func test() {
+           let googleService = GoogleService(placeSession: URLSessionFake(data: FakeResponseData.googleServiceCorrectData, response: FakeResponseData.responseOK, error: nil))
+           let expectation = XCTestExpectation(description: "waiting for queue change")
+           
+           XCTAssertNotNil(googleService.fetchPhoto(reference: ""))
+           expectation.fulfill()
+           
+           wait(for: [expectation], timeout: 0.01)
+       }
 }

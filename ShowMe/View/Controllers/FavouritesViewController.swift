@@ -62,7 +62,6 @@ class FavouritesViewController: UIViewController {
         coreDataManager.deleteAllPlaces()
         favouritesTableView.reloadData()
     }
-    
 }
 
 // MARK: - table View
@@ -95,6 +94,6 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return coreDataManager.placesFav.isEmpty ?? true ? 200:0
+        return coreDataManager.placesFav.isEmpty ? 200:0
     }
 }

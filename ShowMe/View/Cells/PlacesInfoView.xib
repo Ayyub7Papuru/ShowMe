@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlacesInfoView" customModule="ShowMe" customModuleProvider="target">
             <connections>
-                <outlet property="activityIndicator" destination="Slk-FR-gSs" id="ZFU-0M-mmw"/>
                 <outlet property="placesAddress" destination="ICn-t3-mZQ" id="hAs-hJ-ELO"/>
                 <outlet property="placesImage" destination="hU4-zN-SJn" id="IbE-2H-J3X"/>
                 <outlet property="placesName" destination="cby-zl-ggY" id="AnR-0z-hcG"/>
@@ -43,7 +44,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0AO-O8-7Ff">
-                    <rect key="frame" x="322" y="220" width="22" height="20"/>
+                    <rect key="frame" x="322" y="219.5" width="22" height="20"/>
                     <color key="tintColor" red="1" green="0.87821202229999995" blue="0.038096632730000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICn-t3-mZQ">
@@ -53,11 +54,9 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Slk-FR-gSs">
-                    <rect key="frame" x="170.5" y="106.5" width="37" height="37"/>
-                </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="9S0-xh-u04"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="9S0-xh-u04" firstAttribute="bottom" secondItem="MvG-Dp-Tdg" secondAttribute="bottom" constant="10" id="924-M1-3UP"/>
                 <constraint firstItem="9S0-xh-u04" firstAttribute="bottom" secondItem="ICn-t3-mZQ" secondAttribute="bottom" constant="10" id="AWH-eh-F4C"/>
@@ -72,16 +71,16 @@
                 <constraint firstAttribute="trailing" secondItem="cby-zl-ggY" secondAttribute="trailing" constant="15" id="eBB-Og-jOg"/>
                 <constraint firstItem="cby-zl-ggY" firstAttribute="top" secondItem="YZR-ZO-pQc" secondAttribute="top" constant="10" id="f4O-ym-oji"/>
                 <constraint firstItem="hU4-zN-SJn" firstAttribute="trailing" secondItem="9S0-xh-u04" secondAttribute="trailing" id="mRl-5t-sKj"/>
-                <constraint firstItem="Slk-FR-gSs" firstAttribute="centerX" secondItem="YZR-ZO-pQc" secondAttribute="centerX" id="sb9-Nc-UUU"/>
-                <constraint firstItem="Slk-FR-gSs" firstAttribute="centerY" secondItem="YZR-ZO-pQc" secondAttribute="centerY" id="ynb-Qd-dsJ"/>
                 <constraint firstItem="9S0-xh-u04" firstAttribute="bottom" secondItem="hU4-zN-SJn" secondAttribute="bottom" id="zU1-62-DGa"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="9S0-xh-u04"/>
             <point key="canvasLocation" x="287" y="602"/>
         </view>
     </objects>
     <resources>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

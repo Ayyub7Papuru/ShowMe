@@ -27,7 +27,7 @@ class GoogleService {
     
     // MARK: - Public Methods
     
-    func fetchPlacesNearCoordinate(_ coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(), radius: Double = 0.0, types:[String], callback: @escaping (Result<Welcome, Error>) -> Void) {
+    func fetchPlacesNearCoordinate(_ coordinate: CLLocationCoordinate2D, radius: Double, types:[String], callback: @escaping (Result<Welcome, Error>) -> Void) {
         guard let url = URL(string: createUrlGooglePlace(coordinate, radius: radius, types: types)) else { return }
         
         task?.cancel()
@@ -46,7 +46,10 @@ class GoogleService {
                     callback(.failure(PlacesError.NoJSON))
                     return
                 }
+            DispatchQueue.main.async {
                 callback(.success(dataDecoded.self))
+            }
+                
         }
         task?.resume()
     }

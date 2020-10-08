@@ -18,21 +18,41 @@ class MapsViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var mapView: GMSMapView!
     
-    // MARK: - Properties
-    var resultsViewController: GMSAutocompleteResultsViewController?
-    var searchController: UISearchController?
-    var resultView: UITextView?
-    var searchedPlaces = [String]()
+    // MAR: - Public Properties
     
+    public let mapsViewModel = MapsViewModel()
+    
+    // MARK: - Private Properties
+    private var resultsViewController: GMSAutocompleteResultsViewController?
+    private var searchController: UISearchController?
+    private var resultView: UITextView?
     private var locationManager = CLLocationManager()
-    let dataProvider = GoogleService()
-    let searchRadius: Double = 10000
-    var googlePlace: GooglePlace?
-    var coreDataManager: CoreDataManager?
-    var placeImage: UIImage?
+    private var placeImage: UIImage?
+    
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setController()
+    }
+    
+    // MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navigationController = segue.destination as? UINavigationController,
+              let controller = navigationController.topViewController as? PlacesTableViewController else { return }
+        controller.placeTableViewModel.selectedPlaces = mapsViewModel.searchedPlaces
+        controller.delegate = self
+    }
+    
+    // MARK: - IBActions
+    @IBAction func refreshPlaces(_ sender: Any) {
+        fetchPlaces(near: mapView.camera.target)
+    }
+    
+    // MARK: - Private Methods
+    
+    private func setController() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
@@ -41,25 +61,7 @@ class MapsViewController: UIViewController {
         autoCompletion()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard
-            let navigationController = segue.destination as? UINavigationController,
-            let controller = navigationController.topViewController as? PlacesTableViewController
-        else {
-            return
-        }
-        controller.selectedPlaces = searchedPlaces
-        controller.delegate = self
-    }
-    
-    
-    
-    // MARK: - Functions
-    @IBAction func refreshPlaces(_ sender: Any) {
-        fetchPlaces(near: mapView.camera.target)
-    }
-    
-    func autoCompletion() {
+    private func autoCompletion() {
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
         
@@ -78,34 +80,28 @@ class MapsViewController: UIViewController {
         searchController?.hidesNavigationBarDuringPresentation = false
     }
     
-    func fetchPlaces(near coordinate: CLLocationCoordinate2D) {
+    private func savePlace() {
+        mapsViewModel.coreDataManager?.createPlace(name: mapsViewModel.googlePlace?.name ?? "",
+                                                   address: mapsViewModel.googlePlace?.vicinity ?? "",
+                                                   image: placeImage?.jpegRepresentationData ?? Data(),
+                                                   rating: mapsViewModel.googlePlace?.rating ?? 0.0,
+                                                   longitude: Double(mapsViewModel.googlePlace?.geometry.location.lng ?? 0),
+                                                   latitude: Double(mapsViewModel.googlePlace?.geometry.location.lat ?? 0))
+    }
+    
+    private func fetchPlaces(near coordinate: CLLocationCoordinate2D) {
         mapView.clear()
-        DispatchQueue.main.async {
-            self.dataProvider.fetchPlacesNearCoordinate(coordinate, radius: self.searchRadius, types: self.searchedPlaces) { result in
-                switch result {
-                case .success(let welcome):
-                    welcome.results.forEach { place in
-                        let marker = PlaceMarker(place: place, availableTypes: self.searchedPlaces)
-                        marker.map = self.mapView
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
+        self.mapsViewModel.dataProvider.fetchPlacesNearCoordinate(coordinate, radius: self.mapsViewModel.searchRadius, types: self.mapsViewModel.searchedPlaces) { result in
+            switch result {
+            case .success(let welcome):
+                welcome.results.forEach { place in
+                    let marker = PlaceMarker(place: place, availableTypes: self.mapsViewModel.searchedPlaces)
+                    marker.map = self.mapView
                 }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
-    }
-    
-    func savePlace() {
-        coreDataManager?.createPlace(name: googlePlace?.name ?? "", address: googlePlace?.vicinity ?? "", image: placeImage?.jpegRepresentationData ?? Data(), rating: googlePlace?.rating ?? 0.0, longitude: Double(googlePlace?.geometry.location.lng ?? 0), latitude: Double(googlePlace?.geometry.location.lat ?? 0))
-    }
-    
-    private func checkFav() {
-        guard let coreDataManager = coreDataManager else { return }
-        if coreDataManager.isPlaceRegistered(with: googlePlace?.name ?? "") {
-            coreDataManager.deletePlace(named: googlePlace?.name ?? "")
-        } else {
-            savePlace()
-        } 
     }
 }
 
@@ -153,7 +149,7 @@ extension MapsViewController: CLLocationManagerDelegate {
 // MARK: - PlacesTableViewControllerDelegate
 extension MapsViewController: PlacesTableViewControllerDelegate {
     func placesController(didSelectPlaces places: [String]) {
-        searchedPlaces = places
+        mapsViewModel.searchedPlaces = places
         fetchPlaces(near: mapView.camera.target)
     }
 }
@@ -179,7 +175,7 @@ extension MapsViewController: GMSMapViewDelegate {
             placeMarker.mapItem?.openInMaps(launchOptions: launchOptions)
         }
         let save = UIAlertAction(title: "Save", style: .default) { (_) in
-            self.coreDataManager = CoreDataManager(coreDataStack: CoreDataStack())
+            self.mapsViewModel.coreDataManager = CoreDataManager(coreDataStack: CoreDataStack())
             self.savePlace()
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -194,10 +190,8 @@ extension MapsViewController: GMSMapViewDelegate {
         let infoView = PlacesInfoView(frame: CGRect(x: 0, y: 0, width: 250, height: 200))
         infoView.clipsToBounds = true
         infoView.layer.cornerRadius = 20
-        infoView.activityIndicator.startAnimating()
-        infoView.placesImage.sd_setImage(with: URL(string: dataProvider.fetchPhoto(reference: placeMarker.place.photos?.first?.photoReference ?? "")), placeholderImage: UIImage()) { (image, error, cache, url) in
-            infoView.activityIndicator.stopAnimating()
-            infoView.activityIndicator.isHidden = true
+        infoView.mapsVC = self
+        infoView.placesImage.sd_setImage(with: URL(string: mapsViewModel.dataProvider.fetchPhoto(reference: placeMarker.place.photos?.first?.photoReference ?? "")), placeholderImage: UIImage()) { (image, error, cache, url) in
             infoView.placesImage.image = image
             self.placeImage = image
         }
@@ -205,7 +199,7 @@ extension MapsViewController: GMSMapViewDelegate {
         infoView.placesName.text = placeMarker.place.name
         infoView.placesAddress.text = placeMarker.place.vicinity
         infoView.placesRate.text = String(placeMarker.place.rating ?? 0)
-        googlePlace = placeMarker.place
+        mapsViewModel.googlePlace = placeMarker.place
         return infoView
     }
 }
