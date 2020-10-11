@@ -46,9 +46,7 @@ class GoogleService {
                     callback(.failure(PlacesError.NoJSON))
                     return
                 }
-            DispatchQueue.main.async {
                 callback(.success(dataDecoded.self))
-            }
                 
         }
         task?.resume()

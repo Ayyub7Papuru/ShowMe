@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MbR-8Y-kkf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MbR-8Y-kkf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,6 +18,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="622-ne-e9i">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.26112937930000002" green="0.56963300699999997" blue="0.70590347050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="iXa-ry-A8y" kind="relationship" relationship="rootViewController" id="SlM-ce-Cm6"/>
@@ -35,7 +40,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BJD-Kg-xff">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
                                 <connections>
                                     <outlet property="dataSource" destination="iXa-ry-A8y" id="MBU-M1-5Bo"/>
@@ -43,18 +48,18 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="j84-8y-q4i"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BJD-Kg-xff" firstAttribute="leading" secondItem="j84-8y-q4i" secondAttribute="leading" id="DKk-EG-erh"/>
                             <constraint firstItem="j84-8y-q4i" firstAttribute="bottom" secondItem="BJD-Kg-xff" secondAttribute="bottom" id="Ffj-21-ixM"/>
                             <constraint firstItem="j84-8y-q4i" firstAttribute="trailing" secondItem="BJD-Kg-xff" secondAttribute="trailing" id="l7C-Ae-wD4"/>
                             <constraint firstItem="BJD-Kg-xff" firstAttribute="top" secondItem="j84-8y-q4i" secondAttribute="top" id="u4g-Ng-qhc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="j84-8y-q4i"/>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="yIe-nY-V5T">
                         <barButtonItem key="rightBarButtonItem" title="Clear" id="nZf-BW-dLN">
-                            <color key="tintColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.26112937930000002" green="0.56963300699999997" blue="0.70590347050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="clearAllFavorites:" destination="iXa-ry-A8y" id="83p-s3-K0o"/>
                             </connections>
@@ -69,4 +74,9 @@
             <point key="canvasLocation" x="475" y="1"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -27,6 +27,7 @@ class FavouritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
+        setBackground()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,6 +38,11 @@ class FavouritesViewController: UIViewController {
     
     private func setTableView() {
         favouritesTableView.register(UINib(nibName: "PlacesInfoViewTableViewCell", bundle: nil), forCellReuseIdentifier: "placesFavCell")
+    }
+    
+    private func setBackground() {
+        view.backgroundColor = UIColor(named: "background")
+        favouritesTableView.backgroundColor = UIColor(named: "background")
     }
     
     private func selectCell(marker: FavouritePlace) {
@@ -65,6 +71,7 @@ class FavouritesViewController: UIViewController {
 }
 
 // MARK: - table View
+
 extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coreDataManager.placesFav.count
@@ -89,7 +96,7 @@ extension FavouritesViewController: UITableViewDelegate, UITableViewDataSource {
         label.text = "Add some places"
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         label.textAlignment = .center
-        label.textColor = .darkGray
+        label.textColor = UIColor(named: "titles")
         return label
     }
     

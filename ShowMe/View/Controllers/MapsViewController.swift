@@ -16,6 +16,7 @@ import SDWebImage
 class MapsViewController: UIViewController {
     
     // MARK: - Outlets
+    
     @IBOutlet weak var mapView: GMSMapView!
     
     // MAR: - Public Properties
@@ -23,6 +24,7 @@ class MapsViewController: UIViewController {
     public let mapsViewModel = MapsViewModel()
     
     // MARK: - Private Properties
+    
     private var resultsViewController: GMSAutocompleteResultsViewController?
     private var searchController: UISearchController?
     private var resultView: UITextView?
@@ -34,6 +36,23 @@ class MapsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setController()
+        setBackground()
+        mapNightMode()
+    }
+
+    
+    func mapNightMode() -> GMSMapView {
+        do {
+
+          if let styleURL = Bundle.main.url(forResource: "style", withExtension: "json") {
+            mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
+          } else {
+            NSLog("Unable to find style.json")
+          }
+         } catch {
+           NSLog("One or more of the map styles failed to load. \(error)")
+        }
+        return mapView
     }
     
     // MARK: - Segue
@@ -46,9 +65,31 @@ class MapsViewController: UIViewController {
     }
     
     // MARK: - IBActions
+    
     @IBAction func refreshPlaces(_ sender: Any) {
         fetchPlaces(near: mapView.camera.target)
     }
+    
+    @IBAction func mapStyleButtonItem(_ sender: UIBarButtonItem) {
+        
+        switch mapView.mapType {
+        case .normal:
+            mapView.mapType = GMSMapViewType.satellite
+        case .satellite:
+            mapView.mapType = GMSMapViewType.hybrid
+        case .hybrid:
+            mapView.mapType = GMSMapViewType.terrain
+        case .terrain:
+            mapView.mapType = GMSMapViewType.none
+        case .none:
+            mapView.mapType = GMSMapViewType.normal
+        
+        @unknown default:
+            fatalError()
+        }
+    }
+    
+    
     
     // MARK: - Private Methods
     
@@ -59,6 +100,10 @@ class MapsViewController: UIViewController {
         mapView.delegate = self
         mapView.isMyLocationEnabled = true
         autoCompletion()
+    }
+    
+    private func setBackground() {
+        view.backgroundColor = UIColor(named: "background")
     }
     
     private func autoCompletion() {
@@ -94,9 +139,11 @@ class MapsViewController: UIViewController {
         self.mapsViewModel.dataProvider.fetchPlacesNearCoordinate(coordinate, radius: self.mapsViewModel.searchRadius, types: self.mapsViewModel.searchedPlaces) { result in
             switch result {
             case .success(let welcome):
-                welcome.results.forEach { place in
-                    let marker = PlaceMarker(place: place, availableTypes: self.mapsViewModel.searchedPlaces)
-                    marker.map = self.mapView
+                DispatchQueue.main.async {
+                    welcome.results.forEach { place in
+                        let marker = PlaceMarker(place: place, availableTypes: self.mapsViewModel.searchedPlaces)
+                        marker.map = self.mapView
+                    }
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -106,6 +153,7 @@ class MapsViewController: UIViewController {
 }
 
 // MARK: - GMSAutocomplete
+
 extension MapsViewController: GMSAutocompleteResultsViewControllerDelegate {
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                            didAutocompleteWith place: GMSPlace) {
@@ -127,6 +175,7 @@ extension MapsViewController: GMSAutocompleteResultsViewControllerDelegate {
 }
 
 // MARK: - CLLocationManagerDelegate
+
 extension MapsViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard status == .authorizedWhenInUse else { return }
@@ -147,6 +196,7 @@ extension MapsViewController: CLLocationManagerDelegate {
 }
 
 // MARK: - PlacesTableViewControllerDelegate
+
 extension MapsViewController: PlacesTableViewControllerDelegate {
     func placesController(didSelectPlaces places: [String]) {
         mapsViewModel.searchedPlaces = places
@@ -155,6 +205,7 @@ extension MapsViewController: PlacesTableViewControllerDelegate {
 }
 
 // MARK: - GMSMapViewDelegate
+
 extension MapsViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didLongPressInfoWindowOf marker: GMSMarker) {

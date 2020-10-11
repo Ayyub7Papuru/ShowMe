@@ -9,23 +9,38 @@
 import UIKit
 
 // MARK: - Protocol
+
 protocol PlacesTableViewControllerDelegate: class {
     func placesController(didSelectPlaces places: [String])
 }
 
 // MARK: - Class
+
 class PlacesTableViewController: UITableViewController {
     
     weak var delegate: PlacesTableViewControllerDelegate?
     public let placeTableViewModel = PlacesTableViewModel()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setBackground()
+    }
+    
     // MARK: - Actions
+    
     @IBAction func donePressed(_sender: AnyObject) {
         delegate?.placesController(didSelectPlaces: placeTableViewModel.selectedPlaces)
         dismiss(animated: true)
     }
     
+    // MARK: - Private Methods
+    
+    private func setBackground() {
+        view.backgroundColor = UIColor(named: "background")
+    }
+    
     // MARK: - Table view data source
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return placeTableViewModel.possiblePlacesDictionnary.count
     }
