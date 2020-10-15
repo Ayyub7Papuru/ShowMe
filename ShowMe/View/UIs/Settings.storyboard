@@ -38,37 +38,10 @@
                     <view key="view" contentMode="scaleToFill" id="nnt-hP-Qmg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99X-TS-GvO">
-                                <rect key="frame" x="20" y="240" width="374" height="24.5"/>
-                                <color key="tintColor" red="0.26112937930000002" green="0.56963300699999997" blue="0.70590347050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
-                                <color key="textColor" red="0.26112937930000002" green="0.56963300699999997" blue="0.70590347050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="highlightedColor" red="0.26112937930000002" green="0.56963300699999997" blue="0.70590347050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5SJ-wX-YS6" userLabel="Dark Mode Switch">
-                                <rect key="frame" x="183" y="274.5" width="50" height="31"/>
-                                <color key="onTintColor" red="0.26112937930000002" green="0.56963300699999997" blue="0.70590347050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="darkModeToggled:" destination="k4j-bs-5cI" eventType="valueChanged" id="pkG-8T-shE"/>
-                                </connections>
-                            </switch>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="kFE-c1-9cW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="99X-TS-GvO" firstAttribute="top" secondItem="kFE-c1-9cW" secondAttribute="top" constant="100" id="Jjm-y0-OEP"/>
-                            <constraint firstItem="kFE-c1-9cW" firstAttribute="trailing" secondItem="99X-TS-GvO" secondAttribute="trailing" constant="20" id="USf-Dz-Pv7"/>
-                            <constraint firstItem="99X-TS-GvO" firstAttribute="leading" secondItem="kFE-c1-9cW" secondAttribute="leading" constant="20" id="UTb-Hp-IF5"/>
-                            <constraint firstItem="5SJ-wX-YS6" firstAttribute="top" secondItem="99X-TS-GvO" secondAttribute="bottom" constant="10" id="VKn-7m-VRi"/>
-                            <constraint firstItem="5SJ-wX-YS6" firstAttribute="leading" secondItem="kFE-c1-9cW" secondAttribute="leading" constant="183" id="Y8N-aP-A2J"/>
-                            <constraint firstItem="kFE-c1-9cW" firstAttribute="trailing" secondItem="5SJ-wX-YS6" secondAttribute="trailing" constant="183" id="dUK-wb-DvC"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="YTi-xi-zHW"/>
-                    <connections>
-                        <outlet property="darkModeLabel" destination="99X-TS-GvO" id="a8n-Tt-aUB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HoO-hF-hWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

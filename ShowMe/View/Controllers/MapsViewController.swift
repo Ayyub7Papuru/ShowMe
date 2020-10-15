@@ -37,22 +37,7 @@ class MapsViewController: UIViewController {
         super.viewDidLoad()
         setController()
         setBackground()
-        mapNightMode()
-    }
-
-    
-    func mapNightMode() -> GMSMapView {
-        do {
-
-          if let styleURL = Bundle.main.url(forResource: "style", withExtension: "json") {
-            mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
-          } else {
-            NSLog("Unable to find style.json")
-          }
-         } catch {
-           NSLog("One or more of the map styles failed to load. \(error)")
-        }
-        return mapView
+        checkDarkMode()
     }
     
     // MARK: - Segue
@@ -100,6 +85,26 @@ class MapsViewController: UIViewController {
         mapView.delegate = self
         mapView.isMyLocationEnabled = true
         autoCompletion()
+    }
+    
+    private func checkDarkMode() {
+        if traitCollection.userInterfaceStyle == .dark {
+            mapNightMode()
+        } else {
+            mapView.mapType = GMSMapViewType.normal
+        }
+    }
+    
+    private func mapNightMode() {
+        do {
+          if let styleURL = Bundle.main.url(forResource: "style", withExtension: "json") {
+            mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
+          } else {
+            NSLog("Unable to find style.json")
+          }
+         } catch {
+           NSLog("One or more of the map styles failed to load. \(error)")
+        }
     }
     
     private func setBackground() {
@@ -162,9 +167,9 @@ extension MapsViewController: GMSAutocompleteResultsViewControllerDelegate {
         let update = GMSCameraUpdate.setCamera(camera)
         mapView.moveCamera(update)
         
-        print("Place name: \(String(describing: place.name))")
-        print("Place address: \(String(describing: place.formattedAddress))")
-        print("Place attributions: \(String(describing: place.attributions))")
+//        print("Place name: \(String(describing: place.name))")
+//        print("Place address: \(String(describing: place.formattedAddress))")
+//        print("Place attributions: \(String(describing: place.attributions))")
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,

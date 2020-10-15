@@ -45,7 +45,7 @@ class PlaceMarker: GMSMarker {
         position.longitude = place.geometry.location.lng
         
         let places = place.types.filter { availableTypes.contains($0) }
-        _ = places.map { icon = imageWithImage(image: UIImage(named: "\($0)_pin") ?? UIImage(), scaledToSize: CGSize(width: 60.0, height: 60.0)) }
+        _ = places.map { icon = imageWithImage(image: UIImage(named: "\($0)_pin") ?? UIImage(), scaledToSize: CGSize(width: 30.0, height: 30.0)) }
         groundAnchor = CGPoint(x: 0.5, y: 1)
         appearAnimation = .pop
     }

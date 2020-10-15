@@ -12,8 +12,6 @@ class SettingsViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var darkModeLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
@@ -21,15 +19,6 @@ class SettingsViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func darkModeToggled(_ sender: UISwitch) {
-        
-        switch sender.isOn {
-        case false:
-            self.view.window?.overrideUserInterfaceStyle = .light
-        case true:
-            self.view.window?.overrideUserInterfaceStyle = .dark
-        }
-    }
     
     // MARK: - Private Methods
     
