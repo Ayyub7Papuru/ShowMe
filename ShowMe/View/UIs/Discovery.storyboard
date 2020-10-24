@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yIk-ip-g4A">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Discovery-->
+        <scene sceneID="wTd-zZ-NKB">
+            <objects>
+                <navigationController id="yIk-ip-g4A" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discovery" image="network" catalog="system" id="OMa-mC-OKA">
+                        <color key="badgeColor" red="0.50689805129999999" green="0.322433635" blue="0.69397905609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="8l3-PL-Jly">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="mainTitles"/>
+                            <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="k4j-bs-5cI" kind="relationship" relationship="rootViewController" id="h2e-Wo-eWz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yBW-jM-BmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="359" y="-158"/>
+        </scene>
+        <!--Discovery-->
+        <scene sceneID="h6I-w2-Ici">
+            <objects>
+                <viewController id="k4j-bs-5cI" customClass="DiscoveryViewController" customModule="ShowMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nnt-hP-Qmg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MCC-YX-BsT">
+                                <rect key="frame" x="0.0" y="190" width="414" height="623"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="k4j-bs-5cI" id="4qm-mP-ANB"/>
+                                    <outlet property="delegate" destination="k4j-bs-5cI" id="9mg-pP-yX4"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23d8h34m56s" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsw-Zq-I7u">
+                                <rect key="frame" x="20" y="140" width="319" height="40"/>
+                                <color key="backgroundColor" name="mainTitles"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8EY-hF-Gzx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AAl-zV-a2i">
+                                <rect key="frame" x="344" y="139" width="50" height="41"/>
+                                <color key="backgroundColor" name="mainTitles"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="h0B-3p-s4B"/>
+                                    <constraint firstAttribute="width" constant="50" id="uxS-WI-Jrq"/>
+                                </constraints>
+                                <imageReference key="image" image="stopwatch" catalog="system" symbolScale="large" renderingMode="template"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kFE-c1-9cW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kFE-c1-9cW" firstAttribute="trailing" secondItem="AAl-zV-a2i" secondAttribute="trailing" constant="20" id="CAB-xa-12O"/>
+                            <constraint firstItem="AAl-zV-a2i" firstAttribute="top" secondItem="kFE-c1-9cW" secondAttribute="top" constant="3" id="OjK-nv-DTe"/>
+                            <constraint firstItem="kFE-c1-9cW" firstAttribute="bottom" secondItem="MCC-YX-BsT" secondAttribute="bottom" id="Rxj-9e-3yW"/>
+                            <constraint firstItem="MCC-YX-BsT" firstAttribute="trailing" secondItem="kFE-c1-9cW" secondAttribute="trailing" id="d7W-Ff-pKh"/>
+                            <constraint firstItem="MCC-YX-BsT" firstAttribute="leading" secondItem="kFE-c1-9cW" secondAttribute="leading" id="gXo-2I-gyH"/>
+                            <constraint firstItem="Lsw-Zq-I7u" firstAttribute="leading" secondItem="kFE-c1-9cW" secondAttribute="leading" constant="20" id="nuA-Ww-n4c"/>
+                            <constraint firstItem="MCC-YX-BsT" firstAttribute="top" secondItem="Lsw-Zq-I7u" secondAttribute="bottom" constant="10" id="s9D-Hg-0Dp"/>
+                            <constraint firstItem="Lsw-Zq-I7u" firstAttribute="top" secondItem="kFE-c1-9cW" secondAttribute="top" id="xWB-wG-uxq"/>
+                            <constraint firstItem="AAl-zV-a2i" firstAttribute="leading" secondItem="Lsw-Zq-I7u" secondAttribute="trailing" constant="5" id="zt9-Sc-hfo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Discovery" id="YTi-xi-zHW"/>
+                    <connections>
+                        <outlet property="discoveryTableView" destination="MCC-YX-BsT" id="ghv-vs-yDr"/>
+                        <outlet property="timerImage" destination="AAl-zV-a2i" id="rVo-Ff-aoz"/>
+                        <outlet property="timerLabel" destination="Lsw-Zq-I7u" id="A4m-Wl-rAA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HoO-hF-hWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156.521739130435" y="-158.03571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="network" catalog="system" width="128" height="121"/>
+        <image name="stopwatch" catalog="system" width="121" height="128"/>
+        <namedColor name="mainTitles">
+            <color red="0.26100000739097595" green="0.56999999284744263" blue="0.70599997043609619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

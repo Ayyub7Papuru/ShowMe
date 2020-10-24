@@ -4,22 +4,23 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Favorites-->
         <scene sceneID="CpC-cp-b75">
             <objects>
                 <navigationController id="MbR-8Y-kkf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Rm0-2s-w7Z"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" id="Rm0-2s-w7Z"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="622-ne-e9i">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.26112937930000002" green="0.56963300699999997" blue="0.70590347050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" name="mainTitles"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -59,7 +60,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="yIe-nY-V5T">
                         <barButtonItem key="rightBarButtonItem" title="Clear" id="nZf-BW-dLN">
-                            <color key="tintColor" red="0.26112937930000002" green="0.56963300699999997" blue="0.70590347050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" name="mainTitles"/>
                             <connections>
                                 <action selector="clearAllFavorites:" destination="iXa-ry-A8y" id="83p-s3-K0o"/>
                             </connections>
@@ -75,6 +76,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <namedColor name="mainTitles">
+            <color red="0.26100000739097595" green="0.56999999284744263" blue="0.70599997043609619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

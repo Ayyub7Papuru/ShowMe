@@ -12,7 +12,7 @@
 		B13BB07424A50AE7003C651D /* tabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13BB07324A50AE7003C651D /* tabBar.storyboard */; };
 		B13BB07824A50BB0003C651D /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13BB07724A50BB0003C651D /* Maps.storyboard */; };
 		B13BB07A24A50DF9003C651D /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13BB07924A50DF9003C651D /* Favorites.storyboard */; };
-		B13BB07C24A50E58003C651D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13BB07B24A50E58003C651D /* Settings.storyboard */; };
+		B13BB07C24A50E58003C651D /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13BB07B24A50E58003C651D /* Discovery.storyboard */; };
 		B1419C2424AE64C0006445B2 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1419C2324AE64C0006445B2 /* MapsViewController.swift */; };
 		B147CF8324F3D5C5007D7F19 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147CF8224F3D5C4007D7F19 /* CoreDataStack.swift */; };
 		B147CF8524F3D5CF007D7F19 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147CF8424F3D5CF007D7F19 /* CoreDataManager.swift */; };
@@ -23,7 +23,7 @@
 		B1556E72249BDEB6000914E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1556E71249BDEB6000914E8 /* Assets.xcassets */; };
 		B1556E75249BDEB6000914E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1556E73249BDEB6000914E8 /* LaunchScreen.storyboard */; };
 		B15DB04224E725C700A690E9 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15DB04124E725C700A690E9 /* Place.swift */; };
-		B15DDB4E25338FF90080931D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15DDB4D25338FF90080931D /* SettingsViewController.swift */; };
+		B15DDB4E25338FF90080931D /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15DDB4D25338FF90080931D /* DiscoveryViewController.swift */; };
 		B15DDB5A2533AB7F0080931D /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = B15DDB592533AB7F0080931D /* style.json */; };
 		B188A39324BE2D0E003543B2 /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A39224BE2D0E003543B2 /* GoogleService.swift */; };
 		B188A39724BE3771003543B2 /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A39624BE3771003543B2 /* PlaceMarker.swift */; };
@@ -41,6 +41,8 @@
 		B1D41596252B7D13004B3D39 /* GoogleServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D41595252B7D13004B3D39 /* GoogleServiceTest.swift */; };
 		B1D41599252B7DB7004B3D39 /* GoogleService.json in Resources */ = {isa = PBXBuildFile; fileRef = B1D41598252B7DB7004B3D39 /* GoogleService.json */; };
 		B1D54D182524991D0013B9EC /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D54D172524991D0013B9EC /* UIImage+Extensions.swift */; };
+		B1E00453254364B700FE68C6 /* DiscoveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E00451254364B700FE68C6 /* DiscoveryTableViewCell.swift */; };
+		B1E00454254364B700FE68C6 /* DiscoveryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1E00452254364B700FE68C6 /* DiscoveryTableViewCell.xib */; };
 		B1F25DD6252DFB8700787E67 /* CoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F25DD5252DFB8700787E67 /* CoreDataTest.swift */; };
 		B1F25DE2252DFC5F00787E67 /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F25DE1252DFC5F00787E67 /* MockCoreDataStack.swift */; };
 		B1F25DE7252E067B00787E67 /* MapsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F25DE6252E067B00787E67 /* MapsViewModel.swift */; };
@@ -64,7 +66,7 @@
 		B13BB07324A50AE7003C651D /* tabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = tabBar.storyboard; sourceTree = "<group>"; };
 		B13BB07724A50BB0003C651D /* Maps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
 		B13BB07924A50DF9003C651D /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
-		B13BB07B24A50E58003C651D /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		B13BB07B24A50E58003C651D /* Discovery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Discovery.storyboard; sourceTree = "<group>"; };
 		B1419C2324AE64C0006445B2 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		B147CF8224F3D5C4007D7F19 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		B147CF8424F3D5CF007D7F19 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -79,7 +81,7 @@
 		B1556E7B249BDEB6000914E8 /* ShowMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1556E81249BDEB6000914E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B15DB04124E725C700A690E9 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
-		B15DDB4D25338FF90080931D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B15DDB4D25338FF90080931D /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
 		B15DDB592533AB7F0080931D /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 		B188A39224BE2D0E003543B2 /* GoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		B188A39624BE3771003543B2 /* PlaceMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
@@ -97,6 +99,8 @@
 		B1D41595252B7D13004B3D39 /* GoogleServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleServiceTest.swift; sourceTree = "<group>"; };
 		B1D41598252B7DB7004B3D39 /* GoogleService.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleService.json; sourceTree = "<group>"; };
 		B1D54D172524991D0013B9EC /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		B1E00451254364B700FE68C6 /* DiscoveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryTableViewCell.swift; sourceTree = "<group>"; };
+		B1E00452254364B700FE68C6 /* DiscoveryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveryTableViewCell.xib; sourceTree = "<group>"; };
 		B1F25DD5252DFB8700787E67 /* CoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTest.swift; sourceTree = "<group>"; };
 		B1F25DE1252DFC5F00787E67 /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
 		B1F25DE6252E067B00787E67 /* MapsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewModel.swift; sourceTree = "<group>"; };
@@ -177,7 +181,7 @@
 				B13BB07324A50AE7003C651D /* tabBar.storyboard */,
 				B13BB07724A50BB0003C651D /* Maps.storyboard */,
 				B13BB07924A50DF9003C651D /* Favorites.storyboard */,
-				B13BB07B24A50E58003C651D /* Settings.storyboard */,
+				B13BB07B24A50E58003C651D /* Discovery.storyboard */,
 				B188A39C24BE3D8A003543B2 /* PlacesTableViewController.storyboard */,
 			);
 			path = UIs;
@@ -190,6 +194,8 @@
 				B188A3AA24BE497C003543B2 /* PlacesInfoView.xib */,
 				B1AD3C9624F4236700E34A45 /* PlacesInfoViewTableViewCell.swift */,
 				B1AD3C9724F4236700E34A45 /* PlacesInfoViewTableViewCell.xib */,
+				B1E00451254364B700FE68C6 /* DiscoveryTableViewCell.swift */,
+				B1E00452254364B700FE68C6 /* DiscoveryTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -275,7 +281,7 @@
 				B1419C2324AE64C0006445B2 /* MapsViewController.swift */,
 				B188A39E24BE4044003543B2 /* PlacesTableViewController.swift */,
 				B147CF8624F3D94F007D7F19 /* FavouritesViewController.swift */,
-				B15DDB4D25338FF90080931D /* SettingsViewController.swift */,
+				B15DDB4D25338FF90080931D /* DiscoveryViewController.swift */,
 				B15DDB592533AB7F0080931D /* style.json */,
 			);
 			path = Controllers;
@@ -380,11 +386,12 @@
 				B1556E72249BDEB6000914E8 /* Assets.xcassets in Resources */,
 				B15DDB5A2533AB7F0080931D /* style.json in Resources */,
 				B188A39D24BE3D8A003543B2 /* PlacesTableViewController.storyboard in Resources */,
+				B1E00454254364B700FE68C6 /* DiscoveryTableViewCell.xib in Resources */,
 				B13BB07A24A50DF9003C651D /* Favorites.storyboard in Resources */,
 				B13BB07824A50BB0003C651D /* Maps.storyboard in Resources */,
 				B13BB07424A50AE7003C651D /* tabBar.storyboard in Resources */,
 				B188A3AC24BE497C003543B2 /* PlacesInfoView.xib in Resources */,
-				B13BB07C24A50E58003C651D /* Settings.storyboard in Resources */,
+				B13BB07C24A50E58003C651D /* Discovery.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +494,7 @@
 				B147CF8724F3D950007D7F19 /* FavouritesViewController.swift in Sources */,
 				B1419C2424AE64C0006445B2 /* MapsViewController.swift in Sources */,
 				B188A39724BE3771003543B2 /* PlaceMarker.swift in Sources */,
-				B15DDB4E25338FF90080931D /* SettingsViewController.swift in Sources */,
+				B15DDB4E25338FF90080931D /* DiscoveryViewController.swift in Sources */,
 				B147CF8524F3D5CF007D7F19 /* CoreDataManager.swift in Sources */,
 				B188A39F24BE4044003543B2 /* PlacesTableViewController.swift in Sources */,
 				B1F25DEB252F3E2400787E67 /* PlacesTableViewModel.swift in Sources */,
@@ -503,6 +510,7 @@
 				B1D54D182524991D0013B9EC /* UIImage+Extensions.swift in Sources */,
 				B1F25DE7252E067B00787E67 /* MapsViewModel.swift in Sources */,
 				B1AD3C9824F4236700E34A45 /* PlacesInfoViewTableViewCell.swift in Sources */,
+				B1E00453254364B700FE68C6 /* DiscoveryTableViewCell.swift in Sources */,
 				B1C0BB4F251B8B3700261726 /* StructGoogle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,7 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -647,7 +655,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

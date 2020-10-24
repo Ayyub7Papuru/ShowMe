@@ -18,8 +18,12 @@ protocol PlacesTableViewControllerDelegate: class {
 
 class PlacesTableViewController: UITableViewController {
     
+    // MARK: - Properties
+    
     weak var delegate: PlacesTableViewControllerDelegate?
     public let placeTableViewModel = PlacesTableViewModel()
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,7 @@ class PlacesTableViewController: UITableViewController {
     
     @IBAction func donePressed(_sender: AnyObject) {
         delegate?.placesController(didSelectPlaces: placeTableViewModel.selectedPlaces)
+//        checkPlaces()
         dismiss(animated: true)
     }
     
@@ -38,6 +43,14 @@ class PlacesTableViewController: UITableViewController {
     private func setBackground() {
         view.backgroundColor = UIColor(named: "background")
     }
+    
+//    func checkPlaces() {
+//        if placeTableViewModel.selectedPlaces.isEmpty == true {
+//            print("error")
+//        } else {
+//            print("good")
+//        }
+//    }
     
     // MARK: - Table view data source
     
@@ -56,6 +69,7 @@ class PlacesTableViewController: UITableViewController {
         cell.imageView?.image = UIImage(named: key)
         cell.accessoryType = placeTableViewModel.selectedPlaces.contains(key) ? .checkmark : .none
         cell.tintColor = .purple
+        cell.backgroundColor = UIColor(named: "background")
         return cell
     }
     

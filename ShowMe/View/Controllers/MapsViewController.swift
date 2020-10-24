@@ -31,7 +31,7 @@ class MapsViewController: UIViewController {
     private var locationManager = CLLocationManager()
     private var placeImage: UIImage?
     
-    // MARK: - LifeCycle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +114,7 @@ class MapsViewController: UIViewController {
     private func autoCompletion() {
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
+        resultsViewController?.tableCellBackgroundColor = UIColor(named: "background") ?? UIColor()
         
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController

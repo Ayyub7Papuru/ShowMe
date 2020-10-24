@@ -22,7 +22,7 @@ class FavouritesViewController: UIViewController {
     private var placesDerails: GooglePlace?
     private let coreDataManager = CoreDataManager(coreDataStack: CoreDataStack())
     
-    // MARK: - LifeCycle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
