@@ -10,13 +10,16 @@ import UIKit
 
 class DiscoveryTableViewCell: UITableViewCell {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var destinationsName: UILabel!
     @IBOutlet weak var destinationsImage: UIImageView!
     @IBOutlet weak var destinationsAddress: UILabel!
     @IBOutlet weak var destinationsRating: UILabel!
     
-    var service = GoogleService()
+    // MARK: - Properties
     
+    var service = GoogleService()
     var place: GooglePlace? {
         didSet {
             destinationsName.text = place?.name

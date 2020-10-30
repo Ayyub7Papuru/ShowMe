@@ -17,7 +17,7 @@ class PlacesInfoViewTableViewCell: UITableViewCell {
     @IBOutlet weak var placesImage: UIImageView!
     @IBOutlet weak var placesRate: UILabel!
     
-    // MARK: - Public Properties
+    // MARK: - Properties
     
     var favouritePlace: FavouritePlace? {
         didSet {

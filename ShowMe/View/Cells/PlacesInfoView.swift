@@ -11,12 +11,14 @@ import SDWebImage
 
 class PlacesInfoView: UIView {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var placesName: UILabel!
     @IBOutlet weak var placesAddress: UILabel!
     @IBOutlet weak var placesImage: UIImageView!
     @IBOutlet weak var placesRate: UILabel!
     
-    var mapsVC: MapsViewController?
+    // MARK: - Initialisation
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,6 +30,9 @@ class PlacesInfoView: UIView {
         setXib()
     }
     
+    // MARK: - Properties
+    
+    var mapsVC: MapsViewController?
     var place: GooglePlace? {
         didSet {
             placesName.text = place?.name

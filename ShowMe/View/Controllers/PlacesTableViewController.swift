@@ -44,14 +44,6 @@ class PlacesTableViewController: UITableViewController {
         view.backgroundColor = UIColor(named: "background")
     }
     
-//    func checkPlaces() {
-//        if placeTableViewModel.selectedPlaces.isEmpty == true {
-//            print("error")
-//        } else {
-//            print("good")
-//        }
-//    }
-    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
