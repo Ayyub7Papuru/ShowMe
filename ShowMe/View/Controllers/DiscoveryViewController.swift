@@ -27,13 +27,8 @@ class DiscoveryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
-        discoveriesCollectionView?.dataSource = self
-        discoveriesCollectionView?.delegate = self
-    
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
+        setCollectionView()
+        setLocation()
     }
 
     // MARK: - Private Methods
@@ -41,6 +36,18 @@ class DiscoveryViewController: UIViewController {
     private func setBackground() {
         view.backgroundColor = UIColor(named: "background")
         discoveriesCollectionView?.backgroundColor = UIColor(named: "background")
+    }
+    
+    private func setCollectionView() {
+        discoveriesCollectionView?.dataSource = self
+        discoveriesCollectionView?.delegate = self
+    }
+    
+    private func setLocation() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
     }
 }
 
@@ -72,9 +79,9 @@ extension DiscoveryViewController: UICollectionViewDataSource, UICollectionViewD
     func setLocation(discoveryObject: Discovery) {
         locationManager.requestLocation()
         locationManager.stopUpdatingLocation()
-        guard let currentLocation = currentLocation else { return }
+        let defaultValue = CLLocationCoordinate2D(latitude: CLLocationDegrees(CGFloat(44.2)), longitude: CLLocationDegrees(CGFloat(0.63333)))
         
-        googleService.fetchPlacesNearCoordinate(currentLocation, radius: 5000, types: [discoveryObject.discoveryObject.key]) { (result) in
+        googleService.fetchPlacesNearCoordinate(currentLocation ?? defaultValue, radius: 5000, types: [discoveryObject.discoveryObject.key]) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let place):
