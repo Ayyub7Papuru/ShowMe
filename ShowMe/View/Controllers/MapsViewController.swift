@@ -244,6 +244,7 @@ extension MapsViewController: GMSMapViewDelegate {
     }
     
     private func setMarkerInfo(placeMarker: PlaceMarker) -> UIView {
+        placeMarker.tracksInfoWindowChanges = true
         let infoView = PlacesInfoView(frame: CGRect(x: 0, y: 0, width: 250, height: 200))
         infoView.clipsToBounds = true
         infoView.layer.cornerRadius = 20

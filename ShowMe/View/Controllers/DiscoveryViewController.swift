@@ -33,6 +33,7 @@ class DiscoveryViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
     }
 
     // MARK: - Private Methods
@@ -57,10 +58,23 @@ extension DiscoveryViewController: UICollectionViewDataSource, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         discoveriesCollectionView.deselectItem(at: indexPath, animated: true)
-        let cell = discoveries[indexPath.row]
+        let discoveryObject = discoveries[indexPath.row]
+        setLocation(discoveryObject: discoveryObject)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "discoveryFlowCellSegue" {
+            guard let discoveryTableView = segue.destination as? DiscoveryTableViewController else { return }
+            discoveryTableView.myPlaces = sender as? [GooglePlace] ?? [GooglePlace]()
+        }
+    }
+    
+    func setLocation(discoveryObject: Discovery) {
         locationManager.requestLocation()
+        locationManager.stopUpdatingLocation()
+        guard let currentLocation = currentLocation else { return }
         
-        googleService.fetchPlacesNearCoordinate(currentLocation ?? CLLocationCoordinate2D(), radius: 5000, types: [cell.discoveryObject.key]) { (result) in
+        googleService.fetchPlacesNearCoordinate(currentLocation, radius: 5000, types: [discoveryObject.discoveryObject.key]) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let place):
@@ -70,14 +84,6 @@ extension DiscoveryViewController: UICollectionViewDataSource, UICollectionViewD
                 }
             }
         }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "discoveryFlowCellSegue" {
-            guard let discoveryTableView = segue.destination as? DiscoveryTableViewController else { return }
-            discoveryTableView.myPlaces = sender as? [GooglePlace] ?? [GooglePlace]()
-        }
-        
     }
     
 }
