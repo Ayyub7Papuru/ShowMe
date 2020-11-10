@@ -33,6 +33,7 @@
 		B188A3A124BE454F003543B2 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A3A024BE454F003543B2 /* UIView+Extensions.swift */; };
 		B188A3AB24BE497C003543B2 /* PlacesInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A3A924BE497C003543B2 /* PlacesInfoView.swift */; };
 		B188A3AC24BE497C003543B2 /* PlacesInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B188A3AA24BE497C003543B2 /* PlacesInfoView.xib */; };
+		B18EF8B0255832440061EDD5 /* DiscoveryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18EF8AF255832440061EDD5 /* DiscoveryTableViewController.swift */; };
 		B1AD3C9824F4236700E34A45 /* PlacesInfoViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AD3C9624F4236700E34A45 /* PlacesInfoViewTableViewCell.swift */; };
 		B1AD3C9924F4236700E34A45 /* PlacesInfoViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1AD3C9724F4236700E34A45 /* PlacesInfoViewTableViewCell.xib */; };
 		B1AEB26E254C8C4900DB776F /* DiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AEB26D254C8C4900DB776F /* DiscoveryViewModel.swift */; };
@@ -94,6 +95,7 @@
 		B188A3A024BE454F003543B2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B188A3A924BE497C003543B2 /* PlacesInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesInfoView.swift; sourceTree = "<group>"; };
 		B188A3AA24BE497C003543B2 /* PlacesInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesInfoView.xib; sourceTree = "<group>"; };
+		B18EF8AF255832440061EDD5 /* DiscoveryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryTableViewController.swift; sourceTree = "<group>"; };
 		B1AD3C9624F4236700E34A45 /* PlacesInfoViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesInfoViewTableViewCell.swift; sourceTree = "<group>"; };
 		B1AD3C9724F4236700E34A45 /* PlacesInfoViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesInfoViewTableViewCell.xib; sourceTree = "<group>"; };
 		B1AEB26D254C8C4900DB776F /* DiscoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewModel.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				B188A39E24BE4044003543B2 /* PlacesTableViewController.swift */,
 				B147CF8624F3D94F007D7F19 /* FavouritesViewController.swift */,
 				B15DDB4D25338FF90080931D /* DiscoveryViewController.swift */,
+				B18EF8AF255832440061EDD5 /* DiscoveryTableViewController.swift */,
 				B15DDB592533AB7F0080931D /* style.json */,
 			);
 			path = Controllers;
@@ -513,6 +516,7 @@
 				B147CF8324F3D5C5007D7F19 /* CoreDataStack.swift in Sources */,
 				B1AEB26E254C8C4900DB776F /* DiscoveryViewModel.swift in Sources */,
 				B1556E70249BDEB2000914E8 /* ShowMe.xcdatamodeld in Sources */,
+				B18EF8B0255832440061EDD5 /* DiscoveryTableViewController.swift in Sources */,
 				B188A39B24BE3CD8003543B2 /* CLLocationCoordinate+Extensions.swift in Sources */,
 				B15DB04224E725C700A690E9 /* Place.swift in Sources */,
 				B188A39324BE2D0E003543B2 /* GoogleService.swift in Sources */,

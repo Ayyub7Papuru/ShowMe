@@ -21,17 +21,12 @@ class DiscoveryCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func updateDiscoveries() {
+    private func updateDiscoveries() {
         if let discovery = discovery {
-            headTitle?.text = discovery.discoveryHeadTitle
-            mainTitle?.text = discovery.discoveryMainTitle
-            subTitle?.text = discovery.discoverySubTitle
-            discoveryImage?.image = discovery.discoveryImage
-        } else {
-            headTitle?.text = nil
-            mainTitle?.text = nil
-            subTitle?.text = nil
-            discoveryImage?.image = nil
+            headTitle?.text = discovery.discoveryObject.title
+            mainTitle?.text = discovery.discoveryObject.mainTitle
+            subTitle?.text = discovery.discoveryObject.subtitle
+            discoveryImage?.image = discovery.discoveryObject.discoveryImage
         }
         discoveryImage?.layer.cornerRadius = 10.0
         discoveryImage?.layer.masksToBounds = true

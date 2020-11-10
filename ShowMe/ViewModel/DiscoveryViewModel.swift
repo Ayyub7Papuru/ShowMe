@@ -12,23 +12,77 @@ class Discovery {
     
     // MARK: - Private Properties
     
-    var discoveryHeadTitle = ""
-    var discoveryMainTitle = ""
-    var discoverySubTitle = ""
-    var discoveryImage: UIImage
+    let discoveryObject: DiscoveryObject
     
-    init(headTitle: String, mainTitle: String, subTitle: String, discoveryImage: UIImage) {
-        self.discoveryHeadTitle = headTitle
-        self.discoveryMainTitle = mainTitle
-        self.discoverySubTitle = subTitle
-        self.discoveryImage = discoveryImage
+    init(discoveryObject: DiscoveryObject) {
+        self.discoveryObject = discoveryObject
     }
     
     static func fetchDiscoveries() -> [Discovery] {
         return [
-            Discovery(headTitle: "HOTELS", mainTitle: "FEEL SLEEPY ?", subTitle: "The best hotels near you", discoveryImage: UIImage(named: "atlantis")!),
-            Discovery(headTitle: "ZOOS", mainTitle: "JUNGLE TOUR", subTitle: "Explore the wildlife near you", discoveryImage: UIImage(named: "hippopotamus")!),
-            Discovery(headTitle: "AMUSEMENT PARK", mainTitle: "DREAMS AND SENSATIONS", subTitle: "Push your limits", discoveryImage: UIImage(named: "disney")!)
+            Discovery(discoveryObject: .hotels),
+            Discovery(discoveryObject: .zoo),
+            Discovery(discoveryObject: .park)
         ]
+        //aquarium, art_gallery, campground, casino, night_club, tourist_attraction
+    }
+    
+    enum DiscoveryObject {
+        case hotels, zoo, park
+        
+        var title: String {
+            switch self {
+            case .hotels:
+                return "HOTELS"
+            case .zoo:
+                return "ZOOS"
+            case .park:
+                return "AMUSEMENT PARK"
+            }
+        }
+        
+        var key: String {
+            switch self {
+            case .hotels:
+                return "hotel"
+            case .zoo:
+                return "zoo"
+            case .park:
+                return "amusement_park"
+            }
+        }
+        
+        var mainTitle: String {
+            switch self {
+            case .hotels:
+                return "FEEL SLEEPY ?"
+            case .zoo:
+                return "JUNGLE TOUR"
+            case .park:
+                return "SENSATIONS"
+            }
+        }
+        
+        var subtitle: String {
+            switch self {
+            case .hotels:
+                return "The best hotels near you"
+            case .zoo:
+                return "Explore wildlife near you"
+            case .park:
+                return "Push your limits"
+            }
+        }
+        
+        var discoveryImage: UIImage {
+            switch self {
+            case .hotels:
+                return UIImage(named: "atlantis") ?? UIImage()
+            case .zoo:
+                return UIImage(named: "hippopotamus") ?? UIImage()
+            case .park:
+                return UIImage(named: "disney") ?? UIImage()
+            }
+        }
     }
 }

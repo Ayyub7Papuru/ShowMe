@@ -56,7 +56,7 @@
                 <constraint firstAttribute="bottom" secondItem="wi1-EZ-Htb" secondAttribute="bottom" constant="10" id="uvg-zF-fCZ"/>
                 <constraint firstAttribute="trailing" secondItem="PJZ-zM-TdB" secondAttribute="trailing" constant="20" id="x6D-cC-4Pe"/>
             </constraints>
-            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
+            <point key="canvasLocation" x="336" y="47"/>
         </collectionViewCell>
     </objects>
     <resources>
