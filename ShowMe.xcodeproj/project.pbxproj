@@ -173,13 +173,9 @@
 		B13BB06F24A50901003C651D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B188A39224BE2D0E003543B2 /* GoogleService.swift */,
-				B147CF8224F3D5C4007D7F19 /* CoreDataStack.swift */,
-				B188A39624BE3771003543B2 /* PlaceMarker.swift */,
-				B147CF8424F3D5CF007D7F19 /* CoreDataManager.swift */,
-				B188A39A24BE3CD8003543B2 /* CLLocationCoordinate+Extensions.swift */,
-				B15DB04124E725C700A690E9 /* Place.swift */,
-				B1C0BB4E251B8B3700261726 /* StructGoogle.swift */,
+				B13DC6CF255C31CB00C204F8 /* API */,
+				B13DC6CE255C31A100C204F8 /* Core Data */,
+				B13DC6CD255C318500C204F8 /* Service */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,11 +183,11 @@
 		B13BB07024A50929003C651D /* UIs */ = {
 			isa = PBXGroup;
 			children = (
+				B1556E73249BDEB6000914E8 /* LaunchScreen.storyboard */,
 				B13BB07324A50AE7003C651D /* tabBar.storyboard */,
-				B13BB07724A50BB0003C651D /* Maps.storyboard */,
-				B13BB07924A50DF9003C651D /* Favorites.storyboard */,
-				B13BB07B24A50E58003C651D /* Discovery.storyboard */,
-				B188A39C24BE3D8A003543B2 /* PlacesTableViewController.storyboard */,
+				B13DC6E2255C334100C204F8 /* MapsUI */,
+				B13DC6E0255C332900C204F8 /* FavoritesUI */,
+				B13DC6DF255C331E00C204F8 /* DiscoveryUI */,
 			);
 			path = UIs;
 			sourceTree = "<group>";
@@ -199,16 +195,147 @@
 		B13BB07F24A51538003C651D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B13DC6D7255C325900C204F8 /* GMSInfoView */,
+				B13DC6D8255C328500C204F8 /* Favorites */,
+				B13DC6D9255C32A300C204F8 /* Discovery */,
+				B13DC6DB255C32C900C204F8 /* Table View */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B13DC6CD255C318500C204F8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B188A39224BE2D0E003543B2 /* GoogleService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B13DC6CE255C31A100C204F8 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				B147CF8424F3D5CF007D7F19 /* CoreDataManager.swift */,
+				B147CF8224F3D5C4007D7F19 /* CoreDataStack.swift */,
+				B1556E6E249BDEB2000914E8 /* ShowMe.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		B13DC6CF255C31CB00C204F8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B1C0BB4E251B8B3700261726 /* StructGoogle.swift */,
+				B188A39624BE3771003543B2 /* PlaceMarker.swift */,
+				B15DB04124E725C700A690E9 /* Place.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B13DC6D4255C320700C204F8 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				B1419C2324AE64C0006445B2 /* MapsViewController.swift */,
+				B188A39E24BE4044003543B2 /* PlacesTableViewController.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		B13DC6D5255C321300C204F8 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				B147CF8624F3D94F007D7F19 /* FavouritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		B13DC6D6255C322900C204F8 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				B15DDB4D25338FF90080931D /* DiscoveryViewController.swift */,
+				B18EF8AF255832440061EDD5 /* DiscoveryTableViewController.swift */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		B13DC6D7255C325900C204F8 /* GMSInfoView */ = {
+			isa = PBXGroup;
+			children = (
 				B188A3A924BE497C003543B2 /* PlacesInfoView.swift */,
 				B188A3AA24BE497C003543B2 /* PlacesInfoView.xib */,
+			);
+			path = GMSInfoView;
+			sourceTree = "<group>";
+		};
+		B13DC6D8255C328500C204F8 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
 				B1AD3C9624F4236700E34A45 /* PlacesInfoViewTableViewCell.swift */,
 				B1AD3C9724F4236700E34A45 /* PlacesInfoViewTableViewCell.xib */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		B13DC6D9255C32A300C204F8 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				B13DC6DA255C32BB00C204F8 /* Collection View */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		B13DC6DA255C32BB00C204F8 /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
 				B1E00451254364B700FE68C6 /* DiscoveryTableViewCell.swift */,
 				B1E00452254364B700FE68C6 /* DiscoveryTableViewCell.xib */,
+			);
+			path = "Collection View";
+			sourceTree = "<group>";
+		};
+		B13DC6DB255C32C900C204F8 /* Table View */ = {
+			isa = PBXGroup;
+			children = (
 				B1AEB277254C93DA00DB776F /* DiscoveryCollectionViewCell.swift */,
 				B1AEB278254C93DA00DB776F /* DiscoveryCollectionViewCell.xib */,
 			);
-			path = Cells;
+			path = "Table View";
+			sourceTree = "<group>";
+		};
+		B13DC6DF255C331E00C204F8 /* DiscoveryUI */ = {
+			isa = PBXGroup;
+			children = (
+				B13BB07B24A50E58003C651D /* Discovery.storyboard */,
+			);
+			path = DiscoveryUI;
+			sourceTree = "<group>";
+		};
+		B13DC6E0255C332900C204F8 /* FavoritesUI */ = {
+			isa = PBXGroup;
+			children = (
+				B13BB07924A50DF9003C651D /* Favorites.storyboard */,
+			);
+			path = FavoritesUI;
+			sourceTree = "<group>";
+		};
+		B13DC6E2255C334100C204F8 /* MapsUI */ = {
+			isa = PBXGroup;
+			children = (
+				B188A39C24BE3D8A003543B2 /* PlacesTableViewController.storyboard */,
+				B13BB07724A50BB0003C651D /* Maps.storyboard */,
+			);
+			path = MapsUI;
+			sourceTree = "<group>";
+		};
+		B13DC6E3255C337B00C204F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B1556E65249BDEB2000914E8 /* AppDelegate.swift */,
+				B1556E67249BDEB2000914E8 /* SceneDelegate.swift */,
+				B15DDB592533AB7F0080931D /* style.json */,
+				B1556E71249BDEB6000914E8 /* Assets.xcassets */,
+				B1556E76249BDEB6000914E8 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B1556E59249BDEB2000914E8 = {
@@ -237,12 +364,7 @@
 				B13BB06F24A50901003C651D /* Model */,
 				B13BB06E24A508F9003C651D /* View */,
 				B13BB06D24A508E0003C651D /* ViewModel */,
-				B1556E65249BDEB2000914E8 /* AppDelegate.swift */,
-				B1556E67249BDEB2000914E8 /* SceneDelegate.swift */,
-				B1556E71249BDEB6000914E8 /* Assets.xcassets */,
-				B1556E76249BDEB6000914E8 /* Info.plist */,
-				B1556E6E249BDEB2000914E8 /* ShowMe.xcdatamodeld */,
-				B1556E73249BDEB6000914E8 /* LaunchScreen.storyboard */,
+				B13DC6E3255C337B00C204F8 /* Supporting Files */,
 			);
 			path = ShowMe;
 			sourceTree = "<group>";
@@ -262,6 +384,7 @@
 		B188A3A224BE48C1003543B2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B188A39A24BE3CD8003543B2 /* CLLocationCoordinate+Extensions.swift */,
 				B188A3A024BE454F003543B2 /* UIView+Extensions.swift */,
 				B1D54D172524991D0013B9EC /* UIImage+Extensions.swift */,
 			);
@@ -289,12 +412,9 @@
 		B1F25DE5252E065E00787E67 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B1419C2324AE64C0006445B2 /* MapsViewController.swift */,
-				B188A39E24BE4044003543B2 /* PlacesTableViewController.swift */,
-				B147CF8624F3D94F007D7F19 /* FavouritesViewController.swift */,
-				B15DDB4D25338FF90080931D /* DiscoveryViewController.swift */,
-				B18EF8AF255832440061EDD5 /* DiscoveryTableViewController.swift */,
-				B15DDB592533AB7F0080931D /* style.json */,
+				B13DC6D4255C320700C204F8 /* Maps */,
+				B13DC6D5255C321300C204F8 /* Favorites */,
+				B13DC6D6255C322900C204F8 /* Discovery */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -688,7 +808,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6ST64UKQV4;
-				INFOPLIST_FILE = ShowMe/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ShowMe/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -708,7 +828,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6ST64UKQV4;
-				INFOPLIST_FILE = ShowMe/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ShowMe/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
