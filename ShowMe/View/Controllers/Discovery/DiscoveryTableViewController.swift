@@ -15,11 +15,34 @@ class DiscoveryTableViewController: UIViewController {
     
     var myPlaces = [GooglePlace]()
     let service = GoogleService()
-    var zoo = ["zoo"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         discoveryTableView.register(UINib(nibName: "DiscoveryTableViewCell", bundle: nil), forCellReuseIdentifier: "discoveryCell")
+        ifEmpty()
+    }
+    
+    func ifEmpty() {
+        if myPlaces.isEmpty {
+            let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    print("default")
+                    
+                    case .cancel:
+                    print("cancel")
+                    
+                    case .destructive:
+                    print("destructive")
+                    
+                @unknown default:
+                    fatalError("ooops")
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
     }
 }
 

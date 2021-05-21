@@ -38,6 +38,7 @@ class MapsViewController: UIViewController {
         setController()
         setBackground()
         checkDarkMode()
+        setMap()
     }
     
     // MARK: - Segue
@@ -109,6 +110,11 @@ class MapsViewController: UIViewController {
     
     private func setBackground() {
         view.backgroundColor = UIColor(named: "background")
+    }
+    
+    private func setMap() {
+        mapView.clear()
+        mapView.animate(toLocation: CLLocationCoordinate2DMake(37.787994, -122.407437))
     }
     
     private func autoCompletion() {
