@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fc4-QK-AXy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map-->
+        <scene sceneID="pHD-Xe-jtl">
+            <objects>
+                <navigationController id="fc4-QK-AXy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="hz9-7F-DSG"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="KZb-4V-Meg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="mainTitles"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CxE-9v-qfR" kind="relationship" relationship="rootViewController" id="xAE-5J-5Ei"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cx8-Jp-UDW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-749" y="130"/>
+        </scene>
+        <!--Maps-->
+        <scene sceneID="w0g-17-yy8">
+            <objects>
+                <viewController id="CxE-9v-qfR" customClass="MapsViewController" customModule="ShowMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcj-s0-tzw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="td6-mP-aDF" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yrM-vU-8S8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="td6-mP-aDF" firstAttribute="top" secondItem="yrM-vU-8S8" secondAttribute="top" id="5vJ-8D-whR"/>
+                            <constraint firstItem="yrM-vU-8S8" firstAttribute="bottom" secondItem="td6-mP-aDF" secondAttribute="bottom" id="ROl-jw-n78"/>
+                            <constraint firstItem="td6-mP-aDF" firstAttribute="leading" secondItem="yrM-vU-8S8" secondAttribute="leading" id="bkI-u0-zay"/>
+                            <constraint firstItem="yrM-vU-8S8" firstAttribute="trailing" secondItem="td6-mP-aDF" secondAttribute="trailing" id="x8r-Vz-Sot"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Maps" id="l8j-l3-cvH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="3rG-vV-Xfu">
+                            <color key="tintColor" name="mainTitles"/>
+                            <connections>
+                                <action selector="refreshPlaces:" destination="CxE-9v-qfR" id="rzZ-HW-V9r"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="oRz-zd-bGG">
+                                <color key="tintColor" name="mainTitles"/>
+                                <connections>
+                                    <segue destination="osi-Ui-91G" kind="presentation" id="k2x-WH-HtC"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="map.fill" catalog="system" id="TfJ-hO-Fel">
+                                <color key="tintColor" name="mainTitles"/>
+                                <connections>
+                                    <action selector="mapStyleButtonItem:" destination="CxE-9v-qfR" id="deM-qu-aVG"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="td6-mP-aDF" id="cN4-Mz-XsC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9M9-RN-ugU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="129.91071428571428"/>
+        </scene>
+        <!--PlacesTableViewController-->
+        <scene sceneID="G7C-aI-sIE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlacesTableViewController" id="osi-Ui-91G" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RMv-YO-lra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="631" y="130"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
+        <namedColor name="mainTitles">
+            <color red="0.26100000739097595" green="0.56999999284744263" blue="0.70599997043609619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,123 @@
+{
+   "html_attributions" : [],
+   "results" : [
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 44.20604669999999,
+               "lng" : 0.6271272999999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 44.20744703029149,
+                  "lng" : 0.628333480291502
+               },
+               "southwest" : {
+                  "lat" : 44.2047490697085,
+                  "lng" : 0.625635519708498
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/movies-71.png",
+         "name" : "Cinéma CGR Agen",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3264,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108919803887619994156\"\u003eCinéma CGR Agen\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAC12sn4T3-fOB02jgV3cXKDUUrKfDR_dlr2gV5twMQPtqvPsfdD0FaWfijQl_tGUtADTIGsevPyyMZIniypfMy7LfMfzsFSEpu-MO17NswTXe1eHAAYcoCNinfV6OKvqREhDvGkX1lh4JyrulXEkPlGGxGhT32xrA_XFv-mE9DDZKKHwAkwiR9g",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJYYbSrh2zqxIRUu938kTGzy4",
+         "plus_code" : {
+            "compound_code" : "6J4G+CV Agen, France",
+            "global_code" : "8FP26J4G+CV"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJYYbSrh2zqxIRUu938kTGzy4",
+         "scope" : "GOOGLE",
+         "types" : [ "movie_theater", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 2131,
+         "vicinity" : "Adresse postale, 9 Rue de la Prune, Place du Pin, Agen"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 44.20465340000001,
+               "lng" : 0.6275132
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 44.2060196802915,
+                  "lng" : 0.6288047302915021
+               },
+               "southwest" : {
+                  "lat" : 44.2033217197085,
+                  "lng" : 0.626106769708498
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/movies-71.png",
+         "name" : "Les Montreurs d'Images",
+         "photos" : [
+            {
+               "height" : 1520,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100205356083857194591\"\u003eJean-Michel Hache\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAZ1ILaOnJiZ-D7VA-C_OAMnKqP1m4LR5aNVo_71DvskRjS4kJJYSg5kqyqz8aLNN5JIqvV4BDVhhuk8DDDyEFiq8akc5YzCmtzh1e7nHO89IrdQj27ct1BJakkrUlu1n4EhBXnOuHrORyW8rL0t66TCYoGhTNRSQxcrpEGfeE07xNZTKbZyGcKA",
+               "width" : 2688
+            }
+         ],
+         "place_id" : "ChIJb5RIPyKzqxIRtuq4bAqk_ww",
+         "plus_code" : {
+            "compound_code" : "6J3H+V2 Agen, France",
+            "global_code" : "8FP26J3H+V2"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJb5RIPyKzqxIRtuq4bAqk_ww",
+         "scope" : "GOOGLE",
+         "types" : [ "movie_theater", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 334,
+         "vicinity" : "12 Rue Jules Ferry, Agen"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 44.2059773,
+               "lng" : 0.6268543999999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 44.20765713029149,
+                  "lng" : 0.628411380291502
+               },
+               "southwest" : {
+                  "lat" : 44.20495916970849,
+                  "lng" : 0.6257134197084979
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/movies-71.png",
+         "name" : "10 Cinemas",
+         "place_id" : "ChIJG9jqsh2zqxIRXRNsczQDXWg",
+         "plus_code" : {
+            "compound_code" : "6J4G+9P Agen, France",
+            "global_code" : "8FP26J4G+9P"
+         },
+         "reference" : "ChIJG9jqsh2zqxIRXRNsczQDXWg",
+         "scope" : "GOOGLE",
+         "types" : [ "movie_theater", "point_of_interest", "establishment" ],
+         "vicinity" : "Rue Fumadelles, Agen"
+      }
+   ],
+   "status" : "OK"
+}

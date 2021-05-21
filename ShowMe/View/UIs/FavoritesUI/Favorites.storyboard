@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MbR-8Y-kkf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorites-->
+        <scene sceneID="CpC-cp-b75">
+            <objects>
+                <navigationController id="MbR-8Y-kkf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" id="Rm0-2s-w7Z"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="622-ne-e9i">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="mainTitles"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iXa-ry-A8y" kind="relationship" relationship="rootViewController" id="SlM-ce-Cm6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g1J-Yj-UEw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-307" y="1"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="ATE-eb-S0v">
+            <objects>
+                <viewController id="iXa-ry-A8y" customClass="FavouritesViewController" customModule="ShowMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BLm-eZ-ccA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BJD-Kg-xff">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="iXa-ry-A8y" id="MBU-M1-5Bo"/>
+                                    <outlet property="delegate" destination="iXa-ry-A8y" id="54B-1n-KYI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="j84-8y-q4i"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BJD-Kg-xff" firstAttribute="leading" secondItem="j84-8y-q4i" secondAttribute="leading" id="DKk-EG-erh"/>
+                            <constraint firstItem="j84-8y-q4i" firstAttribute="bottom" secondItem="BJD-Kg-xff" secondAttribute="bottom" id="Ffj-21-ixM"/>
+                            <constraint firstItem="j84-8y-q4i" firstAttribute="trailing" secondItem="BJD-Kg-xff" secondAttribute="trailing" id="l7C-Ae-wD4"/>
+                            <constraint firstItem="BJD-Kg-xff" firstAttribute="top" secondItem="j84-8y-q4i" secondAttribute="top" id="u4g-Ng-qhc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorites" id="yIe-nY-V5T">
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="nZf-BW-dLN">
+                            <color key="tintColor" name="mainTitles"/>
+                            <connections>
+                                <action selector="clearAllFavorites:" destination="iXa-ry-A8y" id="83p-s3-K0o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="favouritesTableView" destination="BJD-Kg-xff" id="qFR-so-hYa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3GR-fK-CJp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="475" y="1"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <namedColor name="mainTitles">
+            <color red="0.26100000739097595" green="0.56999999284744263" blue="0.70599997043609619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
