@@ -21,6 +21,7 @@ class Discovery {
     static func fetchDiscoveries() -> [Discovery] {
         return [
             Discovery(discoveryObject: .hotels),
+<<<<<<< HEAD
             Discovery(discoveryObject: .gym),
             Discovery(discoveryObject: .zoo),
             Discovery(discoveryObject: .park),
@@ -35,6 +36,16 @@ class Discovery {
     
     enum DiscoveryObject {
         case hotels, zoo, park, casino, campground, art_gallery, aquarium, gym
+=======
+            Discovery(discoveryObject: .zoo),
+            Discovery(discoveryObject: .park)
+        ]
+        //aquarium, art_gallery, campground, casino, night_club, tourist_attraction
+    }
+    
+    enum DiscoveryObject {
+        case hotels, zoo, park
+>>>>>>> 52b71541a1b6083bb190ed920fff5b3055e8e62b
         
         var title: String {
             switch self {
@@ -44,6 +55,7 @@ class Discovery {
                 return "ZOOS"
             case .park:
                 return "AMUSEMENT PARK"
+<<<<<<< HEAD
             case .casino:
                 return "CASINO"
             case .campground:
@@ -54,6 +66,8 @@ class Discovery {
                 return "AQUARIUM"
             case .gym:
                 return "GYM"
+=======
+>>>>>>> 52b71541a1b6083bb190ed920fff5b3055e8e62b
             }
         }
         
@@ -65,6 +79,7 @@ class Discovery {
                 return "zoo"
             case .park:
                 return "amusement_park"
+<<<<<<< HEAD
             case .casino:
                 return "casino"
             case .campground:
@@ -75,6 +90,8 @@ class Discovery {
                 return "aquarium"
             case .gym:
                 return "gym"
+=======
+>>>>>>> 52b71541a1b6083bb190ed920fff5b3055e8e62b
             }
         }
         
@@ -86,6 +103,7 @@ class Discovery {
                 return "JUNGLE TOUR"
             case .park:
                 return "SENSATIONS"
+<<<<<<< HEAD
             case .casino:
                 return "CHALLENGE LUCK !"
             case .campground:
@@ -96,6 +114,8 @@ class Discovery {
                 return "SEA THE BEAUTY"
             case .gym:
                 return "ENHANCE YOUR BODY"
+=======
+>>>>>>> 52b71541a1b6083bb190ed920fff5b3055e8e62b
             }
         }
         
@@ -107,6 +127,7 @@ class Discovery {
                 return "Explore wildlife near you"
             case .park:
                 return "Push your limits"
+<<<<<<< HEAD
             case .casino:
                 return "Play wisely"
             case .campground:
@@ -117,6 +138,8 @@ class Discovery {
                 return "Beautiful creatures in water but on earth"
             case .gym:
                 return "Road to Ninja"
+=======
+>>>>>>> 52b71541a1b6083bb190ed920fff5b3055e8e62b
             }
         }
         
@@ -128,6 +151,7 @@ class Discovery {
                 return UIImage(named: "hippopotamus") ?? UIImage()
             case .park:
                 return UIImage(named: "disney") ?? UIImage()
+<<<<<<< HEAD
             case .casino:
                 return UIImage(named: "casinoExplore") ?? UIImage()
             case .campground:
@@ -139,6 +163,8 @@ class Discovery {
             case .gym:
                 return UIImage(named: "gymExplore") ?? UIImage()
                 
+=======
+>>>>>>> 52b71541a1b6083bb190ed920fff5b3055e8e62b
             }
         }
     }
