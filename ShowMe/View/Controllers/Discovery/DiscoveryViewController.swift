@@ -79,7 +79,9 @@ extension DiscoveryViewController: UICollectionViewDataSource, UICollectionViewD
     func setLocation(discoveryObject: Discovery) {
         locationManager.requestLocation()
         locationManager.stopUpdatingLocation()
-        let defaultValue = CLLocationCoordinate2D(latitude: CLLocationDegrees(CGFloat(37.787994)), longitude: CLLocationDegrees(CGFloat(-122.407437)))
+        let latitude = locationManager.location?.coordinate.latitude ?? 37.787994
+        let longitude = locationManager.location?.coordinate.longitude ?? -122.407437
+        let defaultValue = CLLocationCoordinate2D(latitude: CLLocationDegrees(CGFloat(latitude)), longitude: CLLocationDegrees(CGFloat(longitude)))
         
         googleService.fetchPlacesNearCoordinate(currentLocation ?? defaultValue, radius: 5000, types: [discoveryObject.discoveryObject.key]) { (result) in
             DispatchQueue.main.async {
