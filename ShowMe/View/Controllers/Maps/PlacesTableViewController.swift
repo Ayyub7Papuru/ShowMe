@@ -10,11 +10,7 @@ import UIKit
 
 // MARK: - Protocol
 
-<<<<<<< HEAD
 protocol PlacesTableViewControllerDelegate: AnyObject {
-=======
-protocol PlacesTableViewControllerDelegate: class {
->>>>>>> 52b71541a1b6083bb190ed920fff5b3055e8e62b
     func placesController(didSelectPlaces places: [String])
 }
 
